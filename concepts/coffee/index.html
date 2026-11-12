@@ -1,0 +1,465 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ПЕНА — кофейня в Краснодаре | Своя обжарка и завтраки весь день</title>
+<meta name="description" content="Кофейня «ПЕНА» в Краснодаре: своя обжарка, фильтр, классика и завтраки весь день. Чапаева, 94, ежедневно с 8:00 до 21:00.">
+<meta name="theme-color" content="#f6f1e7">
+<meta property="og:title" content="ПЕНА — кофейня в Краснодаре">
+<meta property="og:description" content="Своя обжарка, завтраки весь день и окна на солнечную сторону.">
+<meta property="og:type" content="website">
+<meta property="og:image" content="img/hero.jpg">
+<meta property="og:locale" content="ru_RU">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='16' fill='%23241b15'/%3E%3Ctext x='32' y='45' font-family='Georgia,serif' font-size='34' fill='%23f6f1e7' text-anchor='middle'%3EП%3C/text%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Golos+Text:wght@400;500;600&display=swap" rel="stylesheet">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "CafeOrCoffeeShop",
+  "name": "ПЕНА",
+  "description": "Кофейня со своей обжаркой и завтраками весь день.",
+  "servesCuisine": ["кофе", "завтраки", "выпечка"],
+  "priceRange": "200–500 ₽",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "ул. Чапаева, 94",
+    "addressLocality": "Краснодар",
+    "addressCountry": "RU"
+  },
+  "openingHours": "Mo-Su 08:00-21:00"
+}
+</script>
+<style>
+  :root{
+    --paper:#f6f1e7;
+    --paper-2:#efe7d8;
+    --ink:#241b15;
+    --ink-2:#4c3f35;
+    --muted:#7c6d5f;
+    --line:#ddd2c0;
+    --line-strong:#c8bba5;
+    --accent:#b85c36;
+    --sage:#8f9b7e;
+    --dark:#2a1d16;
+    --display:'Cormorant Garamond',Georgia,serif;
+    --sans:'Golos Text',-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;
+    --wrap:1200px;
+    --pad:clamp(20px,4vw,52px);
+    --ease:cubic-bezier(.22,.61,.36,1);
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{
+    background:var(--paper);color:var(--ink);font-family:var(--sans);
+    font-size:16px;line-height:1.6;-webkit-font-smoothing:antialiased;overflow-x:hidden;
+  }
+  body::after{
+    content:"";position:fixed;inset:0;pointer-events:none;z-index:9999;opacity:.028;
+    background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.8' numOctaves='3'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  }
+  ::selection{background:var(--accent);color:var(--paper)}
+  img{display:block;max-width:100%}
+  a{color:inherit;text-decoration:none}
+  button{font:inherit;color:inherit;background:none;border:none;cursor:pointer}
+  :focus-visible{outline:2px solid var(--accent);outline-offset:3px}
+  .container{width:100%;max-width:var(--wrap);margin:0 auto;padding:0 var(--pad)}
+  .skip{position:absolute;left:-9999px;top:0;background:var(--ink);color:var(--paper);padding:14px 20px;z-index:300;font-size:14px}
+  .skip:focus{left:16px;top:16px}
+
+  /* header */
+  .header{position:sticky;top:0;z-index:80;background:rgba(246,241,231,.9);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);border-bottom:1px solid transparent;transition:border-color .3s var(--ease)}
+  .header.scrolled{border-bottom-color:var(--line)}
+  .header-inner{display:flex;align-items:center;justify-content:space-between;gap:24px;height:84px}
+  .logo{display:flex;align-items:center;gap:12px;flex:none}
+  .logo-mark{width:42px;height:42px;border-radius:50%;background:var(--ink);color:var(--paper);display:grid;place-items:center;font-family:var(--display);font-size:22px;line-height:1}
+  .logo-text{font-family:var(--display);font-size:26px;font-weight:600;line-height:1;letter-spacing:.02em}
+  .logo-text small{display:block;font-family:var(--sans);font-size:8px;font-weight:400;letter-spacing:.24em;text-transform:uppercase;color:var(--muted);margin-top:5px}
+  .nav{display:flex;gap:32px;font-size:13px;color:var(--ink-2)}
+  .nav a{position:relative;padding:6px 0}
+  .nav a::after{content:"";position:absolute;left:0;bottom:0;width:0;height:1px;background:var(--accent);transition:width .3s var(--ease)}
+  .nav a:hover::after{width:100%}
+  .btn{display:inline-flex;align-items:center;justify-content:center;gap:9px;padding:14px 24px;border-radius:999px;font-size:13px;font-weight:500;line-height:1;white-space:nowrap;transition:background .3s var(--ease),color .3s var(--ease),border-color .3s var(--ease),transform .3s var(--ease)}
+  .btn svg{width:15px;height:15px;flex:none}
+  .btn-dark{background:var(--ink);color:var(--paper)}
+  .btn-dark:hover{background:var(--accent);transform:translateY(-1px)}
+  .btn-ghost{border:1px solid var(--line-strong);color:var(--ink)}
+  .btn-ghost:hover{border-color:var(--ink);background:var(--ink);color:var(--paper);transform:translateY(-1px)}
+  .btn-sm{padding:11px 19px;font-size:12px}
+  .burger{display:none;flex-direction:column;gap:5px;padding:8px;z-index:110}
+  .burger span{display:block;width:22px;height:1.5px;background:var(--ink);transition:transform .3s var(--ease),opacity .3s var(--ease)}
+  .burger.active span:nth-child(1){transform:translateY(6.5px) rotate(45deg)}
+  .burger.active span:nth-child(2){opacity:0}
+  .burger.active span:nth-child(3){transform:translateY(-6.5px) rotate(-45deg)}
+
+  /* hero */
+  .hero{padding:clamp(40px,6vw,76px) 0 clamp(48px,6vw,84px)}
+  .hero-grid{display:grid;grid-template-columns:1.02fr .98fr;gap:clamp(32px,5vw,72px);align-items:center}
+  .eyebrow{display:flex;align-items:center;gap:10px;font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:var(--muted)}
+  .eyebrow i{width:6px;height:6px;border-radius:50%;background:var(--accent);flex:none}
+  .hero h1{font-family:var(--display);font-weight:500;font-size:clamp(46px,7vw,92px);line-height:.98;letter-spacing:-.025em;margin-top:22px}
+  .hero h1 em{font-style:italic;color:var(--accent)}
+  .lead{font-size:clamp(15.5px,1.35vw,18px);line-height:1.65;color:var(--ink-2);max-width:480px;margin-top:24px}
+  .hero-actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:30px}
+  .hero-facts{display:grid;grid-template-columns:1fr 1fr;gap:18px 28px;margin-top:38px;padding-top:24px;border-top:1px solid var(--line);max-width:440px}
+  .hero-facts div{display:flex;flex-direction:column;gap:3px}
+  .hero-facts dt{font-size:9.5px;letter-spacing:.18em;text-transform:uppercase;color:var(--muted)}
+  .hero-facts dd{font-size:14px;font-weight:500}
+  .hero-media{margin:0;position:relative}
+  .hero-media img{width:100%;height:clamp(420px,56vw,610px);object-fit:cover;border-radius:220px 220px 14px 14px}
+  .hero-media figcaption{display:flex;justify-content:space-between;gap:16px;margin-top:14px;font-size:10px;letter-spacing:.12em;text-transform:uppercase;color:var(--muted)}
+  .hero-media figcaption b{font-weight:500;color:var(--ink-2)}
+
+  /* ticker */
+  .ticker{border-top:1px solid var(--line);border-bottom:1px solid var(--line);overflow:hidden;padding:15px 0;background:var(--paper-2)}
+  .ticker-track{display:flex;width:max-content;animation:ticker 34s linear infinite}
+  .ticker-group{display:flex;flex:none}
+  .ticker span{display:inline-flex;align-items:center;gap:18px;padding-right:18px;font-family:var(--display);font-style:italic;font-size:21px;color:var(--ink-2);white-space:nowrap}
+  .ticker span::after{content:"·";color:var(--accent);font-style:normal}
+  @keyframes ticker{to{transform:translateX(-50%)}}
+
+  /* sections */
+  .section{padding:clamp(64px,8vw,104px) 0;border-top:1px solid var(--line);scroll-margin-top:90px}
+  .sec-head{display:flex;align-items:baseline;gap:16px;margin-bottom:clamp(28px,4vw,46px)}
+  .sec-num{font-size:10px;letter-spacing:.16em;color:var(--accent);font-weight:600}
+  .sec-head h2{font-family:var(--display);font-weight:500;font-size:clamp(34px,4.6vw,56px);line-height:1;letter-spacing:-.02em}
+  .sec-note{margin-left:auto;font-size:10px;letter-spacing:.16em;text-transform:uppercase;color:var(--muted)}
+
+  /* about */
+  .about-grid{display:grid;grid-template-columns:.92fr 1.08fr;gap:clamp(32px,5vw,72px);align-items:center}
+  .about-media img{width:100%;height:clamp(360px,48vw,520px);object-fit:cover;border-radius:14px}
+  .about-copy p{font-size:clamp(16px,1.45vw,19px);line-height:1.7;color:var(--ink-2)}
+  .about-copy p + p{margin-top:18px}
+  .about-copy strong{font-weight:500;color:var(--ink)}
+  .quote{margin-top:28px;padding:20px 0 0 22px;border-left:2px solid var(--accent);font-family:var(--display);font-style:italic;font-size:24px;line-height:1.35;color:var(--ink)}
+  .quote cite{display:block;margin-top:10px;font-family:var(--sans);font-style:normal;font-size:10px;letter-spacing:.16em;text-transform:uppercase;color:var(--muted)}
+
+  /* menu */
+  .menu-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(28px,4vw,56px)}
+  .menu-col h3{font-family:var(--display);font-size:27px;font-weight:600;line-height:1;margin-bottom:18px;padding-bottom:14px;border-bottom:1px solid var(--line-strong)}
+  .mi{padding:12px 0;border-bottom:1px solid var(--line)}
+  .mi:last-child{border-bottom:0}
+  .mi-top{display:flex;align-items:baseline;gap:10px}
+  .mi-name{font-size:14.5px;font-weight:500;line-height:1.35}
+  .mi-dots{flex:1;border-bottom:1px dotted var(--line-strong);transform:translateY(-3px)}
+  .mi-price{font-size:14px;font-weight:500;color:var(--accent);white-space:nowrap}
+  .mi-desc{font-size:12px;line-height:1.5;color:var(--muted);margin-top:4px;max-width:32ch}
+  .menu-foot{display:flex;justify-content:space-between;gap:18px;flex-wrap:wrap;margin-top:32px;padding-top:20px;border-top:1px solid var(--line);font-size:11px;letter-spacing:.04em;color:var(--muted)}
+
+  /* gallery */
+  .gallery-grid{display:grid;grid-template-columns:1fr 1.2fr 1fr;gap:16px;align-items:end}
+  .gallery-grid figure{margin:0}
+  .gallery-grid img{width:100%;height:clamp(260px,30vw,400px);object-fit:cover;border-radius:12px}
+  .gallery-grid figure:nth-child(2) img{height:clamp(320px,38vw,490px)}
+  .gallery-grid figcaption{font-size:10px;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);margin-top:9px}
+
+  /* contacts */
+  .contacts-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:clamp(32px,5vw,72px);align-items:start}
+  .contacts h2{font-family:var(--display);font-weight:500;font-size:clamp(46px,7vw,88px);line-height:.98;letter-spacing:-.03em}
+  .contacts h2 em{font-style:italic;color:var(--accent)}
+  .contacts-lead{font-size:15.5px;line-height:1.65;color:var(--ink-2);max-width:420px;margin-top:20px}
+  .contact-list{margin-top:34px;border-top:1px solid var(--line-strong)}
+  .contact-row{display:flex;align-items:center;gap:18px;padding:17px 0;border-bottom:1px solid var(--line);transition:padding .3s var(--ease),color .3s var(--ease)}
+  .contact-row:hover{padding-left:8px;color:var(--accent)}
+  .contact-row span{font-size:9.5px;letter-spacing:.18em;text-transform:uppercase;color:var(--muted);width:90px;flex:none}
+  .contact-row b{font-size:clamp(15px,1.6vw,19px);font-weight:500}
+  .contact-row svg{width:17px;height:17px;margin-left:auto;flex:none;color:var(--muted)}
+  .contact-row:hover svg{color:var(--accent)}
+  .visit-card{background:var(--dark);color:var(--paper);border-radius:16px;padding:clamp(24px,3vw,36px);position:relative;overflow:hidden}
+  .visit-card::after{content:"";position:absolute;right:-70px;bottom:-90px;width:230px;height:230px;border:1px solid rgba(246,241,231,.18);border-radius:50%}
+  .visit-card h3{font-family:var(--display);font-size:32px;font-weight:500;line-height:1.1}
+  .visit-card p{font-size:13px;line-height:1.7;color:#cdbfae;margin-top:12px;max-width:32ch}
+  .visit-card .big-hours{display:block;font-family:var(--display);font-size:40px;line-height:1;margin-top:24px;color:var(--paper)}
+  .visit-card .big-hours small{display:block;font-family:var(--sans);font-size:9px;letter-spacing:.18em;text-transform:uppercase;color:#a99783;margin-top:8px}
+  .visit-card .btn{margin-top:26px;background:var(--paper);color:var(--ink)}
+  .visit-card .btn:hover{background:var(--accent);color:var(--paper)}
+
+  /* footer */
+  .footer{border-top:1px solid var(--line);padding:24px 0 30px}
+  .footer-inner{display:flex;align-items:center;justify-content:space-between;gap:18px;flex-wrap:wrap;font-size:11px;color:var(--muted)}
+  .footer-inner a{border-bottom:1px solid transparent;padding-bottom:2px}
+  .footer-inner a:hover{border-color:var(--muted);color:var(--ink)}
+
+  .reveal{opacity:0;transform:translateY(16px);transition:opacity .7s var(--ease),transform .7s var(--ease)}
+  .reveal.in{opacity:1;transform:none}
+
+  @media (max-width:960px){
+    .nav{display:none}
+    .burger{display:flex}
+    .nav.open{display:flex;position:fixed;inset:0;z-index:101;flex-direction:column;justify-content:center;align-items:center;gap:28px;background:rgba(246,241,231,.98);backdrop-filter:blur(20px)}
+    .nav.open a{font-size:22px;font-family:var(--display)}
+    .hero-grid{grid-template-columns:1fr;gap:36px}
+    .hero-media img{height:clamp(380px,62vw,520px);border-radius:180px 180px 12px 12px}
+    .about-grid{grid-template-columns:1fr;gap:32px}
+    .about-media{order:2}
+    .menu-grid{grid-template-columns:1fr 1fr}
+    .contacts-grid{grid-template-columns:1fr;gap:36px}
+  }
+  @media (max-width:640px){
+    .header-inner{height:72px}
+    .header .btn-sm{padding:10px 15px;font-size:11px}
+    .hero{padding-top:30px}
+    .hero h1{font-size:clamp(46px,13.5vw,64px)}
+    .hero-facts{grid-template-columns:1fr 1fr;gap:14px 20px}
+    .hero-media img{height:380px;border-radius:150px 150px 10px 10px}
+    .hero-media figcaption{flex-direction:column;gap:4px}
+    .section{padding:56px 0}
+    .sec-note{display:none}
+    .menu-grid{grid-template-columns:1fr;gap:32px}
+    .gallery-grid{grid-template-columns:1fr 1fr;align-items:start}
+    .gallery-grid figure:nth-child(2){grid-column:1/-1;grid-row:1}
+    .gallery-grid img,.gallery-grid figure:nth-child(2) img{height:220px}
+    .gallery-grid figure:nth-child(2) img{height:300px}
+    .contacts h2{font-size:clamp(44px,12vw,60px)}
+    .contact-row span{width:76px}
+    .footer-inner{flex-direction:column;align-items:flex-start;gap:7px}
+  }
+  @media (prefers-reduced-motion:reduce){
+    html{scroll-behavior:auto}
+    *,*::before,*::after{animation-duration:.001ms !important;transition-duration:.001ms !important}
+    .reveal{opacity:1;transform:none}
+    .ticker-track{animation:none}
+  }
+</style>
+<noscript><style>.reveal{opacity:1;transform:none}</style></noscript>
+</head>
+<body>
+<a class="skip" href="#main">К содержанию</a>
+
+<header class="header" id="header">
+  <div class="container header-inner">
+    <a class="logo" href="#top" aria-label="ПЕНА, на главную">
+      <span class="logo-mark" aria-hidden="true">П</span>
+      <span class="logo-text">ПЕНА<small>coffee & pastry</small></span>
+    </a>
+    <nav class="nav" id="nav" aria-label="Основная навигация">
+      <a href="#about">О нас</a>
+      <a href="#menu">Меню</a>
+      <a href="#gallery">Галерея</a>
+      <a href="#contacts">Контакты</a>
+    </nav>
+    <a class="btn btn-dark btn-sm" href="#contacts">К нам</a>
+    <button class="burger" id="burger" aria-label="Открыть меню" aria-expanded="false" aria-controls="nav">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</header>
+
+<main id="main">
+  <section class="hero" id="top">
+    <div class="container hero-grid">
+      <div class="hero-copy">
+        <p class="eyebrow"><i aria-hidden="true"></i> Кофейня · Краснодар</p>
+        <h1>Кофе, который хочется пить <em>медленно</em></h1>
+        <p class="lead">Своя обжарка, завтраки весь день и окна на солнечную сторону. Место, где можно остаться на час с книгой или ноутбуком.</p>
+        <div class="hero-actions">
+          <a class="btn btn-dark" href="#menu">
+            Смотреть меню
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+          </a>
+          <a class="btn btn-ghost" href="#contacts">Как добраться</a>
+        </div>
+        <dl class="hero-facts">
+          <div><dt>Обжарка</dt><dd>своя, каждую неделю</dd></div>
+          <div><dt>Завтраки</dt><dd>весь день</dd></div>
+          <div><dt>Часы</dt><dd>8:00 — 21:00</dd></div>
+          <div><dt>Адрес</dt><dd>Чапаева, 94</dd></div>
+        </dl>
+      </div>
+      <figure class="hero-media">
+        <img src="img/hero.jpg" width="1200" height="1500" alt="Барная стойка кофейни «ПЕНА»: белый кирпич, лампы и кофемашина" fetchpriority="high">
+        <figcaption><b>Чапаева, 94</b><span>ежедневно 8:00–21:00</span></figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <div class="ticker" aria-hidden="true">
+    <div class="ticker-track">
+      <div class="ticker-group">
+        <span>свежая обжарка</span><span>завтраки весь день</span><span>фильтр и классика</span><span>можно с собакой</span><span>свежая обжарка</span><span>завтраки весь день</span><span>фильтр и классика</span><span>можно с собакой</span>
+      </div>
+      <div class="ticker-group">
+        <span>свежая обжарка</span><span>завтраки весь день</span><span>фильтр и классика</span><span>можно с собакой</span><span>свежая обжарка</span><span>завтраки весь день</span><span>фильтр и классика</span><span>можно с собакой</span>
+      </div>
+    </div>
+  </div>
+
+  <section class="section" id="about">
+    <div class="container">
+      <div class="sec-head reveal">
+        <span class="sec-num">01</span>
+        <h2>О нас</h2>
+        <span class="sec-note">С 2021 года</span>
+      </div>
+      <div class="about-grid">
+        <figure class="about-media reveal">
+          <img src="img/bar.jpg" width="1600" height="1067" loading="lazy" alt="Светлый зал кофейни: растения, плетёные кресла и деревянные столы">
+        </figure>
+        <div class="about-copy reveal">
+          <p>«ПЕНА» выросла из маленькой обжарки на кухне: два человека, один ростер и желание сделать кофе понятным. Сегодня у нас <strong>своя обжарка, сезонное зерно и завтраки, которые не заканчиваются в полдень</strong>.</p>
+          <p>Мы не гонимся за сложностью. Просто хороший кофе, свежая выпечка и место, где не торопят.</p>
+          <blockquote class="quote">
+            «Если гость остался на второй кофе — значит, всё получилось».
+            <cite>Команда «ПЕНЫ»</cite>
+          </blockquote>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="menu">
+    <div class="container">
+      <div class="sec-head reveal">
+        <span class="sec-num">02</span>
+        <h2>Меню</h2>
+        <span class="sec-note">Обновляем каждую неделю</span>
+      </div>
+      <div class="menu-grid reveal">
+        <div class="menu-col">
+          <h3>Кофе</h3>
+          <div class="mi"><div class="mi-top"><span class="mi-name">Эспрессо</span><span class="mi-dots"></span><span class="mi-price">190 ₽</span></div><p class="mi-desc">двойной, на зерне недели</p></div>
+          <div class="mi"><div class="mi-top"><span class="mi-name">Капучино</span><span class="mi-dots"></span><span class="mi-price">260 ₽</span></div><p class="mi-desc">плотное молоко, 200 мл</p></div>
+          <div class="mi"><div class="mi-top"><span class="mi-name">Флэт уайт</span><span class="mi-dots"></span><span class="mi-price">280 ₽</span></div><p class="mi-desc">двойной эспрессо, 250 мл</p></div>
+          <div class="mi"><div class="mi-top"><span class="mi-name">Фильтр</span><span class="mi-dots"></span><span class="mi-price">300 ₽</span></div><p class="mi-desc">V60, зерно на выбор</p></div>
+          <div class="mi"><div class="mi-top"><span class="mi-name">Раф</span><span class="mi-dots"></span><span class="mi-price">320 ₽</span></div><p class="mi-desc">ваниль или лаванда</p></div>
+        </div>
+        <div class="menu-col">
+          <h3>Не кофе</h3>
+          <div class="mi"><div class="mi-top"><span class="mi-name">Какао</span><span class="mi-dots"></span><span class="mi-price">290 ₽</span></div><p class="mi-desc">тёмный шоколад, маршмеллоу</p></div>
+          <div class="mi"><div class="mi-top"><span class="mi-name">Матча</span><span class="mi-dots"></span><span class="mi-price">340 ₽</span></div><p class="mi-desc">на миндальном или обычном молоке</p></div>
+          <div class="mi"><div class="mi-top"><span class="mi-name">Чайник чая</span><span class="mi-dots"></span><span class="mi-price">350 ₽</span></div><p class="mi-desc">сборы, 500 мл</p></div>
+          <div class="mi"><div class="mi-top"><span class="mi-name">Лимонад</span><span class="mi-dots"></span><span class="mi-price">280 ₽</span></div><p class="mi-desc">сезонный, домашний</p></div>
+          <div class="mi"><div class="mi-top"><span class="mi-name">Вода</span><span class="mi-dots"></span><span class="mi-price">120 ₽</span></div><p class="mi-desc">still / sparkling</p></div>
+        </div>
+        <div class="menu-col">
+          <h3>К завтраку</h3>
+          <div class="mi"><div class="mi-top"><span class="mi-name">Круассан</span><span class="mi-dots"></span><span class="mi-price">240 ₽</span></div><p class="mi-desc">с миндальным кремом или пустой</p></div>
+          <div class="mi"><div class="mi-top"><span class="mi-name">Сырники</span><span class="mi-dots"></span><span class="mi-price">420 ₽</span></div><p class="mi-desc">со сметаной и сезонным вареньем</p></div>
+          <div class="mi"><div class="mi-top"><span class="mi-name">Овсянка</span><span class="mi-dots"></span><span class="mi-price">340 ₽</span></div><p class="mi-desc">печёное яблоко, корица, орехи</p></div>
+          <div class="mi"><div class="mi-top"><span class="mi-name">Тост с авокадо</span><span class="mi-dots"></span><span class="mi-price">440 ₽</span></div><p class="mi-desc">яйцо пашот, зелень, чили</p></div>
+          <div class="mi"><div class="mi-top"><span class="mi-name">Сэндвич</span><span class="mi-dots"></span><span class="mi-price">480 ₽</span></div><p class="mi-desc">курица, песто, томаты, чиабатта</p></div>
+        </div>
+      </div>
+      <div class="menu-foot reveal">
+        <span>Меню концепта. Цены и состав согласуются с кофейней.</span>
+        <span>Есть безглютеновые позиции — уточните у бариста.</span>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="gallery">
+    <div class="container">
+      <div class="sec-head reveal">
+        <span class="sec-num">03</span>
+        <h2>Атмосфера</h2>
+        <span class="sec-note">Свет, пар, выпечка</span>
+      </div>
+      <div class="gallery-grid reveal">
+        <figure>
+          <img src="img/latte.jpg" width="1200" height="1800" loading="lazy" alt="Три чашки кофе с латте-артом среди растений">
+          <figcaption>Латте-арт</figcaption>
+        </figure>
+        <figure>
+          <img src="img/bar.jpg" width="1600" height="1067" loading="lazy" alt="Зал кофейни с большими окнами и деревянными столами">
+          <figcaption>Зал на Чапаева</figcaption>
+        </figure>
+        <figure>
+          <img src="img/pastry.jpg" width="1600" height="1067" loading="lazy" alt="Свежие круассаны на противне">
+          <figcaption>Завтраки</figcaption>
+        </figure>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="contacts">
+    <div class="container">
+      <div class="sec-head reveal">
+        <span class="sec-num">04</span>
+        <h2>Контакты</h2>
+        <span class="sec-note">Каждый день</span>
+      </div>
+      <div class="contacts-grid">
+        <div class="reveal">
+          <h2>Заходите <em>на кофе</em></h2>
+          <p class="contacts-lead">Без брони и дресс-кода. Просто приходите — места хватит и за столом, и у окна.</p>
+          <div class="contact-list">
+            <a class="contact-row" href="https://yandex.ru/maps/?text=Краснодар%2C%20Чапаева%2C%2094" target="_blank" rel="noopener">
+              <span>Адрес</span>
+              <b>Краснодар, Чапаева, 94</b>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7M8 7h9v9"/></svg>
+            </a>
+            <a class="contact-row" href="https://t.me/pena_coffee" target="_blank" rel="noopener">
+              <span>Telegram</span>
+              <b>@pena_coffee</b>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7M8 7h9v9"/></svg>
+            </a>
+            <a class="contact-row" href="tel:+79880000000">
+              <span>Телефон</span>
+              <b>+7 (988) 000-00-00</b>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7M8 7h9v9"/></svg>
+            </a>
+          </div>
+        </div>
+        <aside class="visit-card reveal">
+          <h3>Чапаева, 94</h3>
+          <p>Первый этаж, вход со двора. Рядом парковка и остановка «Чапаева».</p>
+          <span class="big-hours">8:00 — 21:00<small>ежедневно, без выходных</small></span>
+          <a class="btn" href="https://yandex.ru/maps/?text=Краснодар%2C%20Чапаева%2C%2094" target="_blank" rel="noopener">
+            Построить маршрут
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7M8 7h9v9"/></svg>
+          </a>
+        </aside>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="footer">
+  <div class="container footer-inner">
+    <span>© 2026 ПЕНА · концепт сайта</span>
+    <span>Краснодар, Чапаева, 94</span>
+    <a href="#top">Наверх ↑</a>
+  </div>
+</footer>
+
+<script>
+(function () {
+  var header = document.getElementById('header');
+  var burger = document.getElementById('burger');
+  var nav = document.getElementById('nav');
+  var onScroll = function () { header.classList.toggle('scrolled', window.scrollY > 8); };
+  window.addEventListener('scroll', onScroll, { passive: true });
+  onScroll();
+
+  burger.addEventListener('click', function () {
+    var open = nav.classList.toggle('open');
+    burger.classList.toggle('active', open);
+    burger.setAttribute('aria-expanded', open ? 'true' : 'false');
+    burger.setAttribute('aria-label', open ? 'Закрыть меню' : 'Открыть меню');
+  });
+  nav.addEventListener('click', function (e) {
+    if (e.target.closest('a')) {
+      nav.classList.remove('open');
+      burger.classList.remove('active');
+      burger.setAttribute('aria-expanded', 'false');
+      burger.setAttribute('aria-label', 'Открыть меню');
+    }
+  });
+
+  var items = document.querySelectorAll('.reveal');
+  if (!('IntersectionObserver' in window) || window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+    items.forEach(function (el) { el.classList.add('in'); });
+    return;
+  }
+  var io = new IntersectionObserver(function (entries) {
+    entries.forEach(function (entry) {
+      if (entry.isIntersecting) { entry.target.classList.add('in'); io.unobserve(entry.target); }
+    });
+  }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
+  items.forEach(function (el) { io.observe(el); });
+})();
+</script>
+</body>
+</html>
