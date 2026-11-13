@@ -1,0 +1,845 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>СОЛЬ — грузинское бистро в Краснодаре</title>
+<meta name="description" content="СОЛЬ — грузинское бистро на Красноармейской, 68. Хинкали, хачапури, вино из глиняных кувшинов. Работаем с 12:00 до 00:00.">
+<meta name="theme-color" content="#0b0b0b">
+<meta name="robots" content="noindex, nofollow">
+<meta property="og:title" content="СОЛЬ — грузинское бистро">
+<meta property="og:description" content="Соль, вино и горячий хлеб. Грузинское бистро в Краснодаре.">
+<meta property="og:type" content="website">
+<meta property="og:image" content="img/hero.jpg">
+<meta property="og:locale" content="ru_RU">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' fill='%23e6ff00'/%3E%3Ctext x='32' y='47' font-family='Arial Black,Arial,sans-serif' font-size='38' font-weight='900' fill='%230b0b0b' text-anchor='middle'%3E%D0%A1%3C/text%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@700;900&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Restaurant",
+  "name": "СОЛЬ",
+  "description": "Грузинское бистро: хинкали, хачапури, вино из глиняных кувшинов.",
+  "servesCuisine": ["Грузинская"],
+  "priceRange": "1800-2500 RUB",
+  "telephone": "+7 988 000-00-00",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "ул. Красноармейская, 68",
+    "addressLocality": "Краснодар",
+    "addressCountry": "RU"
+  },
+  "openingHours": "Mo-Su 12:00-00:00"
+}
+</script>
+<style>
+  :root{
+    --acid:#e6ff00;
+    --ink:#0b0b0b;
+    --ink-2:#1a1a1a;
+    --paper:#efede6;
+    --paper-2:#e3e0d6;
+    --muted:#6b6a63;
+    --line:#0b0b0b;
+    --disp:"Unbounded","Arial Black",system-ui,sans-serif;
+    --mono:"JetBrains Mono","Courier New",monospace;
+    --pad:clamp(16px,2.2vw,32px);
+  }
+
+  *,*::before,*::after{box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{
+    margin:0;
+    background:var(--paper);
+    color:var(--ink);
+    font-family:var(--mono);
+    font-size:14px;
+    line-height:1.55;
+    overflow-x:hidden;
+    -webkit-font-smoothing:antialiased;
+  }
+  img{display:block;max-width:100%}
+  a{color:inherit;text-decoration:none}
+  button{font:inherit;color:inherit;background:none;border:0;cursor:pointer}
+  ::selection{background:var(--acid);color:var(--ink)}
+  :focus-visible{outline:3px solid var(--acid);outline-offset:2px}
+  .visually-hidden{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+
+  /* ============ общие блоки ============ */
+  .wrap{padding-inline:var(--pad)}
+  .label{
+    font-size:10.5px;letter-spacing:.2em;text-transform:uppercase;
+    display:inline-flex;align-items:center;gap:8px;
+  }
+  .label::before{content:"";width:7px;height:7px;background:var(--ink);display:block}
+  .sec{border-bottom:1px solid var(--line)}
+  .sec__head{
+    display:flex;flex-wrap:wrap;align-items:flex-end;justify-content:space-between;
+    gap:16px;padding:20px var(--pad) 18px;
+  }
+  .sec__title{
+    font-family:var(--disp);font-weight:900;
+    font-size:clamp(30px,4.6vw,64px);line-height:.95;letter-spacing:-.03em;
+    margin:10px 0 0;text-transform:uppercase;
+  }
+  .sec__note{max-width:340px;font-size:12px;line-height:1.5;color:var(--muted);margin:0}
+
+  /* ============ бегущая строка ============ */
+  .ticker{
+    background:var(--acid);border-bottom:1px solid var(--line);
+    overflow:hidden;height:38px;display:flex;align-items:center;
+  }
+  .ticker__track{
+    display:flex;flex:0 0 auto;white-space:nowrap;
+    animation:tick 34s linear infinite;
+  }
+  .ticker:hover .ticker__track{animation-play-state:paused}
+  .ticker span{
+    font-size:11px;letter-spacing:.22em;text-transform:uppercase;
+    padding-right:26px;
+  }
+  @keyframes tick{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+
+  /* ============ шапка ============ */
+  .bar{
+    position:sticky;top:0;z-index:60;
+    display:grid;grid-template-columns:72px minmax(0,1fr) auto auto;
+    align-items:stretch;
+    background:var(--ink);color:var(--paper);
+    border-bottom:1px solid var(--line);
+  }
+  .bar__mark{
+    display:grid;place-items:center;
+    background:var(--acid);color:var(--ink);
+    font-family:var(--disp);font-weight:900;font-size:30px;line-height:1;
+    padding-bottom:4px;
+  }
+  .bar__brand{
+    display:flex;align-items:center;gap:14px;padding:0 18px;
+    font-family:var(--disp);font-weight:700;font-size:15px;letter-spacing:.02em;
+    text-transform:uppercase;
+  }
+  .bar__brand em{
+    font-style:normal;font-family:var(--mono);font-size:10px;
+    letter-spacing:.18em;color:#8b8b82;text-transform:uppercase;
+  }
+  .bar__nav{display:flex;align-items:stretch}
+  .bar__nav a{
+    display:flex;align-items:center;padding:0 16px;
+    font-size:11px;letter-spacing:.16em;text-transform:uppercase;
+    border-left:1px solid #2a2a2a;transition:background .15s,color .15s;
+  }
+  .bar__nav a:hover{background:var(--acid);color:var(--ink)}
+  .bar__cta{
+    display:flex;align-items:center;padding:0 22px;
+    background:var(--acid);color:var(--ink);
+    font-size:11px;font-weight:600;letter-spacing:.16em;text-transform:uppercase;
+    border-left:1px solid var(--line);
+  }
+  .bar__cta:hover{background:var(--paper)}
+  .burger{
+    display:none;place-items:center;width:60px;border-left:1px solid #2a2a2a;
+  }
+  .burger span{display:block;width:22px;height:2px;background:var(--paper);position:relative}
+  .burger span::before,.burger span::after{
+    content:"";position:absolute;left:0;width:22px;height:2px;background:var(--paper);
+  }
+  .burger span::before{top:-7px}
+  .burger span::after{top:7px}
+
+  /* мобильное меню */
+  .mnav{
+    position:fixed;inset:72px 0 0;z-index:55;background:var(--ink);color:var(--paper);
+    display:none;flex-direction:column;padding:24px var(--pad) 32px;overflow:auto;
+  }
+  .mnav.open{display:flex}
+  .mnav > a{
+    font-family:var(--disp);font-weight:900;font-size:10vw;line-height:1;
+    text-transform:uppercase;letter-spacing:-.03em;padding:10px 0;
+    border-bottom:1px solid #242424;
+  }
+  .mnav > a:hover{color:var(--acid)}
+  .mnav__foot{margin-top:24px;display:grid;gap:6px;font-size:12px;color:#9a9a90;padding-top:24px;border-top:1px solid #242424}
+  .mnav__foot a{
+    font-family:var(--mono);font-size:13px;letter-spacing:.02em;
+    text-transform:none;color:var(--acid);
+  }
+  .mnav__mark{
+    margin-top:auto;font-family:var(--disp);font-weight:900;text-transform:uppercase;
+    font-size:26vw;line-height:.8;letter-spacing:-.05em;
+    color:transparent;-webkit-text-stroke:1px #33332f;
+  }
+
+  /* ============ hero ============ */
+  .hero{
+    display:grid;grid-template-columns:minmax(0,1fr) minmax(300px,38%);
+    border-bottom:1px solid var(--line);
+    min-height:calc(100svh - 110px);
+  }
+  .hero__copy{
+    display:flex;flex-direction:column;justify-content:space-between;gap:26px;
+    padding:22px var(--pad) 18px;
+  }
+  .hero__top{display:flex;justify-content:space-between;align-items:center;gap:12px}
+  .georgian{
+    font-family:Sylfaen,"DejaVu Sans",serif;
+    font-size:clamp(14px,1.6vw,20px);letter-spacing:.06em;color:var(--muted);
+  }
+  .slabs{display:flex;flex-direction:column;gap:8px;margin:0}
+  .slab{
+    font-family:var(--disp);font-weight:900;
+    font-size:clamp(58px,min(14vw,20.5vh),262px);
+    line-height:.86;letter-spacing:-.045em;text-transform:uppercase;
+    padding:.04em .1em .07em;
+    white-space:nowrap;
+    display:flex;align-items:baseline;justify-content:space-between;gap:.3em;
+  }
+  .slab i{
+    font-style:normal;font-family:var(--mono);font-weight:400;
+    font-size:clamp(8px,.85vw,11px);letter-spacing:.18em;text-transform:uppercase;
+    opacity:.75;white-space:nowrap;transform:translateY(-.2em);
+  }
+  .slab--1{background:var(--acid);color:var(--ink)}
+  .slab--2{background:var(--ink);color:var(--acid);padding-left:.1em}
+  .slab--3{background:transparent;color:var(--ink);border:1px solid var(--ink);padding-left:.2em}
+  .hero__bottom{display:grid;gap:16px}
+  .hero__note{
+    margin:0;max-width:44ch;font-size:clamp(13px,1.15vw,15px);line-height:1.6;
+  }
+  .hero__facts{
+    display:flex;flex-wrap:wrap;gap:8px 22px;
+    padding-top:14px;border-top:1px solid #c9c6bb;
+    font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);
+  }
+  .hero__media{position:relative;border-left:1px solid var(--line);min-height:100%}
+  .hero__media img{width:100%;height:100%;object-fit:cover;filter:contrast(1.04) saturate(.94)}
+  .hero__cap{
+    position:absolute;left:0;bottom:0;background:var(--acid);color:var(--ink);
+    padding:7px 12px;font-size:10px;letter-spacing:.2em;text-transform:uppercase;
+  }
+  .hero__badge{
+    position:absolute;top:0;right:0;width:64px;height:64px;
+    display:grid;place-items:center;background:var(--ink);color:var(--acid);
+    font-family:var(--disp);font-weight:900;font-size:15px;
+  }
+
+  /* ============ меню-лента ============ */
+  .ribbon{
+    display:flex;overflow-x:auto;scroll-snap-type:x mandatory;
+    border-top:1px solid var(--line);scrollbar-width:none;
+  }
+  .ribbon::-webkit-scrollbar{display:none}
+  .dish{
+    flex:0 0 clamp(238px,23vw,318px);scroll-snap-align:start;
+    border-right:1px solid var(--line);
+    padding:22px 18px 18px;display:flex;flex-direction:column;gap:10px;
+    min-height:318px;transition:background .16s linear,color .16s linear;
+  }
+  .dish:hover,.dish:focus-within{background:var(--ink);color:var(--acid)}
+  .dish__num{font-size:10.5px;letter-spacing:.2em;opacity:.6}
+  .dish__name{
+    font-family:var(--disp);font-weight:700;
+    font-size:clamp(19px,1.6vw,23px);line-height:1.06;letter-spacing:-.02em;
+    margin:0;text-transform:uppercase;
+  }
+  .dish__desc{margin:0;font-size:12.5px;line-height:1.5;opacity:.72;flex:1}
+  .dish__price{font-family:var(--disp);font-weight:900;font-size:24px;letter-spacing:-.02em}
+  .dish__price small{font-family:var(--mono);font-size:10.5px;font-weight:400;letter-spacing:.1em;opacity:.6}
+
+  .arrows{display:flex;gap:0;border:1px solid var(--line)}
+  .arrows button{
+    width:46px;height:44px;display:grid;place-items:center;
+    font-size:16px;border-right:1px solid var(--line);
+    transition:background .15s,color .15s;
+  }
+  .arrows button:last-child{border-right:0}
+  .arrows button:hover{background:var(--ink);color:var(--acid)}
+  .arrows button:disabled{opacity:.3;cursor:default}
+
+  /* ============ о нас ============ */
+  .about{display:grid;grid-template-columns:1.15fr .85fr;gap:0;border-top:1px solid var(--line)}
+  .about__text{padding:28px var(--pad) 32px;border-right:1px solid var(--line)}
+  .about__lead{
+    font-family:var(--disp);font-weight:700;
+    font-size:clamp(21px,2.7vw,38px);line-height:1.12;letter-spacing:-.025em;
+    margin:0 0 24px;max-width:20ch;text-transform:uppercase;
+  }
+  .about__cols{display:grid;grid-template-columns:1fr 1fr;gap:22px;max-width:640px}
+  .about__cols p{margin:0 0 12px;font-size:13px;line-height:1.65;color:#31312d}
+  .about__sign{
+    margin-top:22px;display:flex;align-items:center;gap:12px;
+    font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);
+  }
+  .about__sign b{font-weight:600;color:var(--ink)}
+  .about__media{display:grid;grid-template-rows:1fr auto;background:var(--ink)}
+  .about__media figure{margin:0;position:relative;overflow:hidden}
+  .about__media img{width:100%;height:100%;object-fit:cover}
+  .about__media figcaption{
+    position:absolute;left:0;bottom:0;background:var(--ink);color:var(--paper);
+    padding:6px 10px;font-size:10px;letter-spacing:.18em;text-transform:uppercase;
+  }
+  .about__quote{
+    background:var(--acid);color:var(--ink);padding:20px var(--pad);
+    font-family:var(--disp);font-weight:700;font-size:clamp(15px,1.35vw,19px);
+    line-height:1.25;letter-spacing:-.01em;
+  }
+
+  /* ============ вино ============ */
+  .wine__band{margin:0;position:relative;overflow:hidden;border-top:1px solid var(--line)}
+  .wine__band img{
+    width:100%;height:clamp(150px,24vw,290px);object-fit:cover;object-position:center 50%;
+    filter:contrast(1.05) saturate(.9);
+  }
+  .wine__band figcaption{
+    position:absolute;left:0;bottom:0;background:var(--ink);color:var(--paper);
+    padding:6px 12px;font-size:10px;letter-spacing:.18em;text-transform:uppercase;
+  }
+  .wine__band + .wine-list{border-top:0}
+  .wine-list{list-style:none;margin:0;padding:0;border-top:1px solid var(--line)}
+  .wine{
+    display:flex;align-items:baseline;gap:14px;
+    padding:14px var(--pad);border-bottom:1px solid #cfccc1;
+    transition:background .15s;
+  }
+  .wine:hover{background:var(--acid)}
+  .wine__name{font-family:var(--disp);font-weight:700;font-size:clamp(16px,1.5vw,20px);letter-spacing:-.02em;text-transform:uppercase}
+  .wine__region{font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);white-space:nowrap}
+  .wine__lead{flex:1;border-bottom:1px dotted #a9a69b;transform:translateY(-4px)}
+  .wine__price{font-size:13px;white-space:nowrap}
+  .wine__price b{font-family:var(--disp);font-weight:700;font-size:15px}
+
+  /* ============ бронь ============ */
+  .book{background:var(--ink);color:var(--paper)}
+  .book .sec__head{border-bottom:1px solid #242424}
+  .book .sec__note{color:#8a8a80}
+  .book .label::before{background:var(--acid)}
+  .book__grid{display:grid;grid-template-columns:1fr 1fr;border-top:1px solid #242424}
+  .book__intro{
+    display:flex;flex-direction:column;gap:16px;
+    padding:26px var(--pad) 26px;border-right:1px solid #242424;
+  }
+  .book__intro p{margin:0;font-size:13px;line-height:1.65;color:#b9b9ae;max-width:38ch}
+  .book__photo{
+    margin:auto 0 0;position:relative;overflow:hidden;border:1px solid #2f2f2b;
+  }
+  .book__photo img{
+    width:100%;height:clamp(140px,15vw,230px);object-fit:cover;
+    filter:grayscale(.2) contrast(1.08);
+  }
+  .book__photo figcaption{
+    position:absolute;left:0;bottom:0;background:var(--acid);color:var(--ink);
+    padding:5px 10px;font-size:10px;letter-spacing:.18em;text-transform:uppercase;
+  }
+  .book__big{
+    font-family:var(--disp);font-weight:900;font-size:clamp(34px,5.6vw,78px);
+    line-height:.92;letter-spacing:-.04em;color:var(--acid);margin:0 0 6px;
+    text-transform:uppercase;
+  }
+  .book__hours{display:grid;gap:4px;font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:#8a8a80}
+  .book__form{padding:26px var(--pad) 32px;display:grid;gap:16px;align-content:start}
+  .field{display:grid;gap:6px}
+  .field label{font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:#8a8a80}
+  .field input,.field select,.field textarea{
+    width:100%;background:transparent;border:0;border-bottom:1px solid #3a3a36;
+    color:var(--paper);font:inherit;font-size:15px;padding:8px 0 10px;
+    border-radius:0;appearance:none;
+  }
+  .field textarea{resize:vertical;min-height:56px}
+  .field input:focus,.field select:focus,.field textarea:focus{
+    outline:none;border-bottom-color:var(--acid);
+  }
+  .field input::placeholder{color:#5e5e57}
+  .row2{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+  .submit{
+    margin-top:6px;background:var(--acid);color:var(--ink);
+    padding:16px 20px;font-size:12px;font-weight:600;letter-spacing:.18em;
+    text-transform:uppercase;display:flex;justify-content:space-between;align-items:center;
+    transition:background .15s;
+  }
+  .submit span{display:flex;align-items:center}
+  .submit:hover{background:var(--paper)}
+  .form-note{font-size:10.5px;color:#6f6f66;line-height:1.5;margin:0}
+  .form-ok{
+    display:none;border:1px solid var(--acid);color:var(--acid);
+    padding:12px 14px;font-size:12px;line-height:1.5;
+  }
+  .form-ok.show{display:block}
+
+  /* ============ контакты ============ */
+  .contacts{display:grid;grid-template-columns:repeat(4,1fr);border-top:1px solid var(--line)}
+  .contact-cell{padding:22px 18px 26px;border-right:1px solid var(--line)}
+  .contact-cell:last-child{border-right:0}
+  .contact-cell dt{font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:var(--muted);margin-bottom:8px}
+  .contact-cell dd{margin:0;font-size:14px;line-height:1.5}
+  .contact-cell a:hover{background:var(--acid)}
+  .contact-cell .big{font-family:var(--disp);font-weight:700;font-size:clamp(16px,1.7vw,21px);letter-spacing:-.02em}
+
+  /* ============ подвал ============ */
+  .foot{background:var(--ink);color:var(--paper);border-top:1px solid var(--line)}
+  .foot__word{
+    font-family:var(--disp);font-weight:900;
+    font-size:clamp(72px,21vw,340px);line-height:.8;letter-spacing:-.05em;
+    text-transform:uppercase;margin:0;padding:14px var(--pad) 0;
+    color:transparent;-webkit-text-stroke:1px #3a3a35;
+    white-space:nowrap;overflow:hidden;
+  }
+  .foot__row{
+    display:flex;flex-wrap:wrap;gap:12px 28px;justify-content:space-between;
+    padding:18px var(--pad) 22px;font-size:11px;letter-spacing:.1em;
+    text-transform:uppercase;color:#8a8a80;border-top:1px solid #242424;margin-top:18px;
+  }
+  .foot__row a:hover{color:var(--acid)}
+  .disclaimer{
+    padding:0 var(--pad) 26px;font-size:10.5px;line-height:1.6;color:#5f5f58;max-width:70ch;
+  }
+
+  /* ============ появление ============ */
+  .rv{opacity:0;transform:translateY(14px);transition:opacity .5s ease,transform .5s ease}
+  .rv.in{opacity:1;transform:none}
+
+  /* ============ адаптив ============ */
+  @media (max-width:1080px){
+    .bar__nav a{padding:0 12px;font-size:10px}
+    .about{grid-template-columns:1fr}
+    .about__text{border-right:0;border-bottom:1px solid var(--line)}
+    .about__media{grid-template-columns:1fr 1fr;grid-template-rows:auto}
+    .contacts{grid-template-columns:1fr 1fr}
+    .contact-cell:nth-child(2){border-right:0}
+    .contact-cell:nth-child(1),.contact-cell:nth-child(2){border-bottom:1px solid var(--line)}
+  }
+  @media (max-width:900px){
+    .hero{grid-template-columns:1fr;min-height:0}
+    .hero__media{border-left:0;border-top:1px solid var(--line);height:min(62vh,520px)}
+    .slab{font-size:clamp(58px,17vw,150px)}
+    .book__grid{grid-template-columns:1fr}
+    .book__intro{border-right:0;border-bottom:1px solid #242424}
+    .bar{grid-template-columns:64px 1fr auto auto}
+    .bar__nav{display:none}
+    .burger{display:grid}
+    .bar__brand em{display:none}
+  }
+  @media (max-width:640px){
+    .slab{font-size:clamp(52px,15.6vw,96px);width:fit-content;padding-right:.18em}
+    .slab i{display:none}
+    .sec__head{padding-top:16px}
+    .hero__copy{padding-top:18px;gap:20px}
+    .about__cols{grid-template-columns:1fr}
+    .about__media{grid-template-columns:1fr}
+    .contacts{grid-template-columns:1fr}
+    .contact-cell{border-right:0;border-bottom:1px solid var(--line)}
+    .contact-cell:last-child{border-bottom:0}
+    .wine__region{display:none}
+    .row2{grid-template-columns:1fr}
+    .bar__cta{padding:0 14px;font-size:10px}
+  }
+  @media (prefers-reduced-motion:reduce){
+    html{scroll-behavior:auto}
+    .ticker__track{animation:none}
+    .rv{opacity:1;transform:none;transition:none}
+  }
+</style>
+</head>
+<body>
+
+<a class="visually-hidden" href="#menu">Перейти к меню</a>
+
+<!-- бегущая строка -->
+<div class="ticker" aria-hidden="true">
+  <div class="ticker__track">
+    <span>хинкали</span><span>·</span><span>хачапури</span><span>·</span><span>вино из кувшинов</span><span>·</span><span>мцвади на углях</span><span>·</span><span>соль</span><span>·</span><span>хлеб каждый день</span><span>·</span>
+    <span>хинкали</span><span>·</span><span>хачапури</span><span>·</span><span>вино из кувшинов</span><span>·</span><span>мцвади на углях</span><span>·</span><span>соль</span><span>·</span><span>хлеб каждый день</span><span>·</span>
+  </div>
+</div>
+
+<!-- шапка -->
+<header class="bar">
+  <a class="bar__mark" href="#top" aria-label="СОЛЬ, на главную">С</a>
+  <div class="bar__brand">СОЛЬ <em>грузинское бистро</em></div>
+  <nav class="bar__nav" aria-label="Основная навигация">
+    <a href="#menu">меню</a>
+    <a href="#about">о нас</a>
+    <a href="#wine">вино</a>
+    <a href="#contacts">контакты</a>
+  </nav>
+  <a class="bar__cta" href="#book">забронировать</a>
+  <button class="burger" aria-label="Меню" aria-expanded="false" aria-controls="mnav"><span></span></button>
+</header>
+
+<div class="mnav" id="mnav">
+  <a href="#menu">Меню</a>
+  <a href="#about">О нас</a>
+  <a href="#wine">Вино</a>
+  <a href="#book">Бронь</a>
+  <a href="#contacts">Контакты</a>
+  <div class="mnav__foot">
+    <span>Красноармейская, 68</span>
+    <span>12:00 — 00:00</span>
+    <a href="tel:+79880000000">+7 (988) 000-00-00</a>
+  </div>
+  <span class="mnav__mark" aria-hidden="true">СОЛЬ</span>
+</div>
+
+<main id="top">
+
+  <!-- 01 hero -->
+  <section class="hero">
+    <div class="hero__copy">
+      <div class="hero__top">
+        <span class="label">01 / бистро</span>
+        <span class="georgian" lang="ka">მარილი</span>
+      </div>
+
+      <h1 class="slabs">
+        <span class="slab slab--1">СОЛЬ <i>с 2019</i></span>
+        <span class="slab slab--2">ВИНО <i>кахетия</i></span>
+        <span class="slab slab--3">ХЛЕБ <i>каждый день</i></span>
+      </h1>
+
+      <div class="hero__bottom">
+        <p class="hero__note">Соль не обсуждают. Её просто ставят на стол — вместе с вином и горячим хлебом.</p>
+        <div class="hero__facts">
+          <span>12:00 — 00:00</span>
+          <span>чек 1800 — 2500 ₽</span>
+          <span>Красноармейская, 68</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="hero__media">
+      <img src="img/hero.jpg" width="1400" height="1900" alt="Подача блюда в бистро «СОЛЬ»: тарелка с мясом и зеленью на тёмном столе" fetchpriority="high">
+      <span class="hero__badge">С</span>
+      <span class="hero__cap">подача / 01</span>
+    </div>
+  </section>
+
+  <!-- 02 меню -->
+  <section class="sec" id="menu">
+    <div class="sec__head">
+      <div>
+        <span class="label">02 / меню</span>
+        <h2 class="sec__title">Восемь позиций</h2>
+      </div>
+      <div style="display:flex;align-items:flex-end;gap:18px">
+        <p class="sec__note">Остальное — по настроению шефа. Листайте вбок: меню длинное, как грузинский тост.</p>
+        <div class="arrows">
+          <button type="button" id="prev" aria-label="Предыдущие блюда">←</button>
+          <button type="button" id="next" aria-label="Следующие блюда">→</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="ribbon" id="ribbon" tabindex="0" aria-label="Меню, прокручивается вбок">
+      <article class="dish">
+        <span class="dish__num">01</span>
+        <h3 class="dish__name">Хинкали<br>с говядиной</h3>
+        <p class="dish__desc">Три штуки. Тесто тонкое, сок внутри. Едят руками, иначе не считается.</p>
+        <span class="dish__price">320 <small>₽</small></span>
+      </article>
+      <article class="dish">
+        <span class="dish__num">02</span>
+        <h3 class="dish__name">Хачапури<br>по-аджарски</h3>
+        <p class="dish__desc">Лодочка с сыром и желтком. Размешать, оторвать борт, обмакнуть.</p>
+        <span class="dish__price">590 <small>₽</small></span>
+      </article>
+      <article class="dish">
+        <span class="dish__num">03</span>
+        <h3 class="dish__name">Пхали<br>из шпината</h3>
+        <p class="dish__desc">Холодная закуска с грецким орехом и чесноком. К вину — первым делом.</p>
+        <span class="dish__price">290 <small>₽</small></span>
+      </article>
+      <article class="dish">
+        <span class="dish__num">04</span>
+        <h3 class="dish__name">Лобио<br>в горшке</h3>
+        <p class="dish__desc">Фасоль, кинза, лук. Подаём с мчади — кукурузной лепёшкой.</p>
+        <span class="dish__price">340 <small>₽</small></span>
+      </article>
+      <article class="dish">
+        <span class="dish__num">05</span>
+        <h3 class="dish__name">Чахохбили<br>из курицы</h3>
+        <p class="dish__desc">Тушёная с томатами и травами. Кисло, остро, много соуса — нужен хлеб.</p>
+        <span class="dish__price">480 <small>₽</small></span>
+      </article>
+      <article class="dish">
+        <span class="dish__num">06</span>
+        <h3 class="dish__name">Мцвади<br>на углях</h3>
+        <p class="dish__desc">Свиная шея, крупная соль, гранатовый соус. Без гарнира — так честнее.</p>
+        <span class="dish__price">690 <small>₽</small></span>
+      </article>
+      <article class="dish">
+        <span class="dish__num">07</span>
+        <h3 class="dish__name">Хачапури<br>по-мегрельски</h3>
+        <p class="dish__desc">Круглое, с сыром внутри и снаружи. На двоих хватит, но никто не делится.</p>
+        <span class="dish__price">620 <small>₽</small></span>
+      </article>
+      <article class="dish">
+        <span class="dish__num">08</span>
+        <h3 class="dish__name">Чурчхела<br>с орехом</h3>
+        <p class="dish__desc">Виноградный сок, грецкий орех, мука. Десерт, который старше нас всех.</p>
+        <span class="dish__price">180 <small>₽</small></span>
+      </article>
+    </div>
+  </section>
+
+  <!-- 03 о нас -->
+  <section class="sec" id="about">
+    <div class="sec__head">
+      <div>
+        <span class="label">03 / о нас</span>
+        <h2 class="sec__title">Без тостов</h2>
+      </div>
+      <p class="sec__note">Четырнадцать столов, открытая кухня и печь, которую топим с утра.</p>
+    </div>
+
+    <div class="about">
+      <div class="about__text">
+        <p class="about__lead">Мы не играем в Грузию. Мы готовим то, что едим сами.</p>
+        <div class="about__cols">
+          <div>
+            <p>Начали в 2019-м с шести столов на Красноармейской. Никакой «концепции» не было — была печь, тесто и упрямство.</p>
+            <p>Хинкали лепим утром, каждый день. Если тесто не получилось — не подаём и говорим об этом прямо.</p>
+          </div>
+          <div>
+            <p>Вино возим из Кахетии малыми партиями, часть стоит в глиняных квеври. Список меняется чаще, чем меню.</p>
+            <p>Соль на столе — крупная, из Сванетии. Это единственное, что мы не обсуждаем с гостем.</p>
+          </div>
+        </div>
+        <div class="about__sign"><b>Нино и Дато</b> — хозяева</div>
+      </div>
+
+      <div class="about__media">
+        <figure>
+          <img src="img/hall.jpg" width="1600" height="1000" loading="lazy" alt="Зал бистро «СОЛЬ»: тёмные столы, свет над баром">
+          <figcaption>зал / 14 столов</figcaption>
+        </figure>
+        <div class="about__quote">«Хлеб печём дважды в день. Второй раз — потому что первый съедают.»</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 04 вино -->
+  <section class="sec" id="wine">
+    <div class="sec__head">
+      <div>
+        <span class="label">04 / вино</span>
+        <h2 class="sec__title">Кувшин и бутылка</h2>
+      </div>
+      <p class="sec__note">Цена: бокал / бутылка. Оранжевые — те, что бродили с кожей, как делали до нас.</p>
+    </div>
+
+    <figure class="wine__band">
+      <img src="img/wine.jpg" width="1400" height="900" loading="lazy" alt="Бокалы красного вина в бистро «СОЛЬ»">
+      <figcaption>бокал / 150 мл</figcaption>
+    </figure>
+
+    <ul class="wine-list">
+      <li class="wine"><span class="wine__name">Ркацители</span><span class="wine__region">Кахетия · белое</span><span class="wine__lead"></span><span class="wine__price">320 / <b>1 900 ₽</b></span></li>
+      <li class="wine"><span class="wine__name">Цинандали</span><span class="wine__region">Кахетия · белое</span><span class="wine__lead"></span><span class="wine__price">380 / <b>2 400 ₽</b></span></li>
+      <li class="wine"><span class="wine__name">Мцване</span><span class="wine__region">Картли · белое</span><span class="wine__lead"></span><span class="wine__price">360 / <b>2 300 ₽</b></span></li>
+      <li class="wine"><span class="wine__name">Киси</span><span class="wine__region">Кахетия · оранжевое</span><span class="wine__lead"></span><span class="wine__price">420 / <b>2 700 ₽</b></span></li>
+      <li class="wine"><span class="wine__name">Саперави</span><span class="wine__region">Кахетия · красное</span><span class="wine__lead"></span><span class="wine__price">340 / <b>2 100 ₽</b></span></li>
+      <li class="wine"><span class="wine__name">Хванчкара</span><span class="wine__region">Рача · красное, полусладкое</span><span class="wine__lead"></span><span class="wine__price">450 / <b>3 100 ₽</b></span></li>
+    </ul>
+  </section>
+
+  <!-- 05 бронь -->
+  <section class="sec book" id="book">
+    <div class="sec__head">
+      <div>
+        <span class="label">05 / бронь</span>
+        <h2 class="sec__title">Стол на вечер</h2>
+      </div>
+      <p class="sec__note">Подтверждаем звонком в течение 15 минут. На компании от восьми человек — предоплата.</p>
+    </div>
+
+    <div class="book__grid">
+      <div class="book__intro">
+        <p class="book__big">Пятница<br>начинается<br>во вторник</p>
+        <p>Лучшие столы у печи уходят за три-четыре дня. Если хотите именно там — бронируйте заранее, мы не придерживаем.</p>
+        <div class="book__hours">
+          <span>пн — чт · 12:00 — 00:00</span>
+          <span>пт — сб · 12:00 — 02:00</span>
+          <span>вс · 12:00 — 00:00</span>
+        </div>
+        <figure class="book__photo">
+          <img src="img/bread.jpg" width="900" height="1125" loading="lazy" alt="Хлеб из печи бистро «СОЛЬ»">
+          <figcaption>печь топим с утра</figcaption>
+        </figure>
+      </div>
+
+      <form class="book__form" id="bookForm" novalidate>
+        <div class="row2">
+          <div class="field">
+            <label for="name">Имя</label>
+            <input id="name" name="name" type="text" placeholder="Как к вам обращаться" required>
+          </div>
+          <div class="field">
+            <label for="phone">Телефон</label>
+            <input id="phone" name="phone" type="tel" placeholder="+7 (___) ___-__-__" required>
+          </div>
+        </div>
+        <div class="row2">
+          <div class="field">
+            <label for="date">Дата</label>
+            <input id="date" name="date" type="date" required>
+          </div>
+          <div class="field">
+            <label for="time">Время</label>
+            <select id="time" name="time">
+              <option>18:00</option><option>19:00</option><option>20:00</option>
+              <option>21:00</option><option>22:00</option><option>23:00</option>
+            </select>
+          </div>
+        </div>
+        <div class="field">
+          <label for="guests">Гостей</label>
+          <select id="guests" name="guests">
+            <option>2</option><option>3</option><option>4</option><option>5</option>
+            <option>6</option><option>8</option><option>10 и больше</option>
+          </select>
+        </div>
+        <button class="submit" type="submit">Забронировать стол <span aria-hidden="true"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="square"><path d="M4 12h15M13 6l6 6-6 6"/></svg></span></button>
+        <p class="form-note">Нажимая кнопку, вы соглашаетесь на обработку персональных данных.</p>
+        <div class="form-ok" id="formOk" role="status">Это концепт: заявка никуда не уходит. В рабочей версии она приходит в Telegram ресторана и дублируется на почту.</div>
+      </form>
+    </div>
+  </section>
+
+  <!-- 06 контакты -->
+  <section class="sec" id="contacts">
+    <div class="sec__head">
+      <div>
+        <span class="label">06 / контакты</span>
+        <h2 class="sec__title">Найти нас</h2>
+      </div>
+      <p class="sec__note">Парковка во дворе, вход со стороны Красноармейской. Летом открыта веранда.</p>
+    </div>
+
+    <dl class="contacts">
+      <div class="contact-cell">
+        <dt>адрес</dt>
+        <dd class="big">Красноармейская, 68</dd>
+        <dd style="margin-top:6px;font-size:12px;color:var(--muted)">Краснодар, 350000</dd>
+      </div>
+      <div class="contact-cell">
+        <dt>часы</dt>
+        <dd class="big">12:00 — 00:00</dd>
+        <dd style="margin-top:6px;font-size:12px;color:var(--muted)">пт и сб до 02:00</dd>
+      </div>
+      <div class="contact-cell">
+        <dt>телефон</dt>
+        <dd class="big"><a href="tel:+79880000000">+7 (988) 000-00-00</a></dd>
+        <dd style="margin-top:6px;font-size:12px;color:var(--muted)">звонки и WhatsApp</dd>
+      </div>
+      <div class="contact-cell">
+        <dt>соцсети</dt>
+        <dd class="big"><a href="https://t.me/sol_bistro" rel="noopener">Telegram</a></dd>
+        <dd style="margin-top:6px;font-size:12px;color:var(--muted)">@sol_bistro</dd>
+      </div>
+    </dl>
+  </section>
+</main>
+
+<footer class="foot">
+  <p class="foot__word" aria-hidden="true">СОЛЬ</p>
+  <div class="foot__row">
+    <span>СОЛЬ · грузинское бистро</span>
+    <span>Краснодар · Красноармейская, 68</span>
+    <a href="#top">наверх ↑</a>
+  </div>
+  <p class="disclaimer">
+    Концепт. Бренд «СОЛЬ», адрес и телефон вымышлены и приведены для демонстрации.
+    Фотографии — Unsplash. Если вы владелец заведения и хотите такой сайт — это делается за 3–5 дней.
+  </p>
+</footer>
+
+<script>
+(function(){
+  "use strict";
+
+  /* мобильное меню */
+  var burger = document.querySelector(".burger");
+  var mnav = document.getElementById("mnav");
+  var bar = document.querySelector(".bar");
+  if (burger && mnav) {
+    burger.addEventListener("click", function(){
+      var open = mnav.classList.toggle("open");
+      burger.setAttribute("aria-expanded", open ? "true" : "false");
+      if (open && bar) {
+        var box = bar.getBoundingClientRect();
+        mnav.style.top = box.bottom + "px";
+      }
+      document.body.style.overflow = open ? "hidden" : "";
+    });
+    mnav.querySelectorAll("a").forEach(function(a){
+      a.addEventListener("click", function(){
+        mnav.classList.remove("open");
+        burger.setAttribute("aria-expanded", "false");
+        document.body.style.overflow = "";
+      });
+    });
+  }
+
+  /* лента меню */
+  var ribbon = document.getElementById("ribbon");
+  var prev = document.getElementById("prev");
+  var next = document.getElementById("next");
+  if (ribbon && prev && next) {
+    var step = function(){
+      var card = ribbon.querySelector(".dish");
+      return card ? card.getBoundingClientRect().width + 1 : 280;
+    };
+    var sync = function(){
+      prev.disabled = ribbon.scrollLeft < 8;
+      next.disabled = ribbon.scrollLeft + ribbon.clientWidth >= ribbon.scrollWidth - 8;
+    };
+    prev.addEventListener("click", function(){ ribbon.scrollBy({left:-step(),behavior:"smooth"}); });
+    next.addEventListener("click", function(){ ribbon.scrollBy({left:step(),behavior:"smooth"}); });
+    ribbon.addEventListener("scroll", sync, {passive:true});
+    window.addEventListener("resize", sync);
+    sync();
+  }
+
+  /* появление блоков */
+  var items = document.querySelectorAll(".sec__head, .dish, .about__text, .about__media, .wine, .contact-cell");
+  if ("IntersectionObserver" in window) {
+    var io = new IntersectionObserver(function(entries){
+      entries.forEach(function(e){
+        if (e.isIntersecting) { e.target.classList.add("in"); io.unobserve(e.target); }
+      });
+    }, {rootMargin:"0px 0px -8% 0px", threshold:0.05});
+    items.forEach(function(el){ el.classList.add("rv"); io.observe(el); });
+  }
+
+  /* минимальная дата брони — сегодня */
+  var date = document.getElementById("date");
+  if (date) {
+    var d = new Date();
+    var iso = d.getFullYear() + "-" + String(d.getMonth()+1).padStart(2,"0") + "-" + String(d.getDate()).padStart(2,"0");
+    date.min = iso;
+    date.value = iso;
+  }
+
+  /* форма — демо */
+  var form = document.getElementById("bookForm");
+  var ok = document.getElementById("formOk");
+  if (form && ok) {
+    form.addEventListener("submit", function(e){
+      e.preventDefault();
+      var name = form.name.value.trim();
+      var phone = form.phone.value.trim();
+      if (name.length < 2 || phone.replace(/\D/g,"").length < 10) {
+        ok.textContent = "Проверьте имя и телефон: нужно не меньше 10 цифр.";
+        ok.classList.add("show");
+        return;
+      }
+      ok.textContent = "Это концепт: заявка никуда не уходит. В рабочей версии она приходит в Telegram ресторана и дублируется на почту.";
+      ok.classList.add("show");
+      form.querySelector(".submit").textContent = "Заявка принята ✓";
+    });
+  }
+})();
+</script>
+</body>
+</html>

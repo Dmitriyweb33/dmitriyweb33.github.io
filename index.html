@@ -236,6 +236,8 @@
   .concepts{padding:clamp(56px,7vw,96px) 0}
   .concepts-lead{font-size:clamp(15px,1.35vw,18px);line-height:1.6;color:var(--ink-2);max-width:720px;margin-bottom:clamp(26px,3.5vw,40px)}
   .concept-grid{display:grid;grid-template-columns:1fr 1fr;gap:clamp(20px,3vw,32px)}
+.concept-card--wide{grid-column:1 / -1}
+.concept-card--wide .concept-media img{aspect-ratio:1440/775}
   .concept-card{display:block}
   .concept-media{position:relative;overflow:hidden;border:1px solid var(--line);border-radius:12px;background:#fff}
   .concept-media img{width:100%;height:auto;aspect-ratio:36/25;object-fit:cover;transition:transform .6s var(--ease)}
@@ -533,7 +535,7 @@
           Открыть концепт
           <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7M8 7h9v9"/></svg>
         </a>
-        <span class="case-next">Ещё два концепта — ниже ↓</span>
+        <span class="case-next">Ещё три концепта — ниже ↓</span>
       </div>
     </div>
   </section>
@@ -544,9 +546,9 @@
       <div class="sec-head reveal">
         <span class="sec-num">02</span>
         <h2>Ещё концепты</h2>
-        <span class="sec-note">Кофейня · Стейк-хаус</span>
+        <span class="sec-note">Кофейня · Стейк-хаус · Бистро</span>
       </div>
-      <p class="concepts-lead reveal">Два вымышленных бренда — чтобы показать разные характеры: светлый минимализм и тёмный премиум. Оба сайта собраны с нуля.</p>
+      <p class="concepts-lead reveal">Три вымышленных бренда — чтобы показать разные характеры: светлый минимализм, тёмный премиум и брутализм. Все сайты собраны с нуля.</p>
 
       <div class="concept-grid">
         <a class="concept-card reveal" href="concepts/coffee/index.html" target="_blank" rel="noopener">
@@ -578,8 +580,23 @@
             <span class="concept-arrow" aria-hidden="true">↗</span>
           </div>
         </a>
+
+        <a class="concept-card concept-card--wide reveal" href="concepts/salt/index.html" target="_blank" rel="noopener">
+          <div class="concept-media">
+            <img src="img/concept-salt.jpg" width="1440" height="775" loading="lazy" alt="Главный экран концепта грузинского бистро «СОЛЬ»: огромные надписи «СОЛЬ», «ВИНО», «ХЛЕБ» на жёлтом и чёрном">
+            <span class="concept-badge">концепт</span>
+          </div>
+          <div class="concept-body">
+            <div>
+              <h3 class="concept-title">СОЛЬ</h3>
+              <span class="concept-meta">грузинское бистро · Краснодар</span>
+              <p class="concept-desc">Брутализм: кислотный жёлтый, типографика во весь экран и меню, которое листается вбок.</p>
+            </div>
+            <span class="concept-arrow" aria-hidden="true">↗</span>
+          </div>
+        </a>
       </div>
-      <p class="concepts-note reveal">Оба бренда вымышлены, фотографии — Unsplash. Сайты открываются в новой вкладке.</p>
+      <p class="concepts-note reveal">Все три бренда вымышлены, фотографии — Unsplash. Сайты открываются в новой вкладке.</p>
     </div>
   </section>
 
