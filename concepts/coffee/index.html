@@ -3,18 +3,17 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>ПЕНА — кофейня в Краснодаре | Своя обжарка и завтраки весь день</title>
+<title>ПЕНА — кофейня в Краснодаре (концепт)</title>
 <meta name="description" content="Кофейня «ПЕНА» в Краснодаре: своя обжарка, фильтр, классика и завтраки весь день. Чапаева, 94, ежедневно с 8:00 до 21:00.">
 <meta name="theme-color" content="#f6f1e7">
+<meta name="robots" content="noindex, nofollow">
 <meta property="og:title" content="ПЕНА — кофейня в Краснодаре">
 <meta property="og:description" content="Своя обжарка, завтраки весь день и окна на солнечную сторону.">
 <meta property="og:type" content="website">
 <meta property="og:image" content="img/hero.jpg">
 <meta property="og:locale" content="ru_RU">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='16' fill='%23241b15'/%3E%3Ctext x='32' y='45' font-family='Georgia,serif' font-size='34' fill='%23f6f1e7' text-anchor='middle'%3EП%3C/text%3E%3C/svg%3E">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Golos+Text:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="fonts/fonts.css">
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -99,8 +98,7 @@
   .hero-grid{display:grid;grid-template-columns:1.02fr .98fr;gap:clamp(32px,5vw,72px);align-items:center}
   .eyebrow{display:flex;align-items:center;gap:10px;font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:var(--muted)}
   .eyebrow i{width:6px;height:6px;border-radius:50%;background:var(--accent);flex:none}
-  .hero h1{font-family:var(--display);font-weight:500;font-size:clamp(46px,7vw,92px);line-height:.98;letter-spacing:-.025em;margin-top:22px}
-  .hero h1 em{font-style:italic;color:var(--accent)}
+  .hero h1{font-family:var(--display);font-weight:500;font-size:clamp(46px,6.9vw,88px);line-height:.98;letter-spacing:-.028em;margin-top:22px;text-wrap:balance}
   .lead{font-size:clamp(15.5px,1.35vw,18px);line-height:1.65;color:var(--ink-2);max-width:480px;margin-top:24px}
   .hero-actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:30px}
   .hero-facts{display:grid;grid-template-columns:1fr 1fr;gap:18px 28px;margin-top:38px;padding-top:24px;border-top:1px solid var(--line);max-width:440px}
@@ -111,14 +109,6 @@
   .hero-media img{width:100%;height:clamp(420px,56vw,610px);object-fit:cover;border-radius:220px 220px 14px 14px}
   .hero-media figcaption{display:flex;justify-content:space-between;gap:16px;margin-top:14px;font-size:10px;letter-spacing:.12em;text-transform:uppercase;color:var(--muted)}
   .hero-media figcaption b{font-weight:500;color:var(--ink-2)}
-
-  /* ticker */
-  .ticker{border-top:1px solid var(--line);border-bottom:1px solid var(--line);overflow:hidden;padding:15px 0;background:var(--paper-2)}
-  .ticker-track{display:flex;width:max-content;animation:ticker 34s linear infinite}
-  .ticker-group{display:flex;flex:none}
-  .ticker span{display:inline-flex;align-items:center;gap:18px;padding-right:18px;font-family:var(--display);font-style:italic;font-size:21px;color:var(--ink-2);white-space:nowrap}
-  .ticker span::after{content:"·";color:var(--accent);font-style:normal}
-  @keyframes ticker{to{transform:translateX(-50%)}}
 
   /* sections */
   .section{padding:clamp(64px,8vw,104px) 0;border-top:1px solid var(--line);scroll-margin-top:90px}
@@ -158,7 +148,6 @@
   /* contacts */
   .contacts-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:clamp(32px,5vw,72px);align-items:start}
   .contacts h2{font-family:var(--display);font-weight:500;font-size:clamp(46px,7vw,88px);line-height:.98;letter-spacing:-.03em}
-  .contacts h2 em{font-style:italic;color:var(--accent)}
   .contacts-lead{font-size:15.5px;line-height:1.65;color:var(--ink-2);max-width:420px;margin-top:20px}
   .contact-list{margin-top:34px;border-top:1px solid var(--line-strong)}
   .contact-row{display:flex;align-items:center;gap:18px;padding:17px 0;border-bottom:1px solid var(--line);transition:padding .3s var(--ease),color .3s var(--ease)}
@@ -191,6 +180,7 @@
     .nav.open{display:flex;position:fixed;inset:0;z-index:101;flex-direction:column;justify-content:center;align-items:center;gap:28px;background:rgba(246,241,231,.98);backdrop-filter:blur(20px)}
     .nav.open a{font-size:22px;font-family:var(--display)}
     .hero-grid{grid-template-columns:1fr;gap:36px}
+    .hero h1{font-size:clamp(56px,8.6vw,76px)}
     .hero-media img{height:clamp(380px,62vw,520px);border-radius:180px 180px 12px 12px}
     .about-grid{grid-template-columns:1fr;gap:32px}
     .about-media{order:2}
@@ -220,7 +210,6 @@
     html{scroll-behavior:auto}
     *,*::before,*::after{animation-duration:.001ms !important;transition-duration:.001ms !important}
     .reveal{opacity:1;transform:none}
-    .ticker-track{animation:none}
   }
 </style>
 <noscript><style>.reveal{opacity:1;transform:none}</style></noscript>
@@ -252,8 +241,8 @@
     <div class="container hero-grid">
       <div class="hero-copy">
         <p class="eyebrow"><i aria-hidden="true"></i> Кофейня · Краснодар</p>
-        <h1>Кофе, который хочется пить <em>медленно</em></h1>
-        <p class="lead">Своя обжарка, завтраки весь день и окна на солнечную сторону. Место, где можно остаться на час с книгой или ноутбуком.</p>
+        <h1>Утро, кофе, окна на солнце</h1>
+        <p class="lead">Своя обжарка, завтраки весь день и место, где можно остаться на час с книгой или ноутбуком.</p>
         <div class="hero-actions">
           <a class="btn btn-dark" href="#menu">
             Смотреть меню
@@ -274,17 +263,6 @@
       </figure>
     </div>
   </section>
-
-  <div class="ticker" aria-hidden="true">
-    <div class="ticker-track">
-      <div class="ticker-group">
-        <span>свежая обжарка</span><span>завтраки весь день</span><span>фильтр и классика</span><span>можно с собакой</span><span>свежая обжарка</span><span>завтраки весь день</span><span>фильтр и классика</span><span>можно с собакой</span>
-      </div>
-      <div class="ticker-group">
-        <span>свежая обжарка</span><span>завтраки весь день</span><span>фильтр и классика</span><span>можно с собакой</span><span>свежая обжарка</span><span>завтраки весь день</span><span>фильтр и классика</span><span>можно с собакой</span>
-      </div>
-    </div>
-  </div>
 
   <section class="section" id="about">
     <div class="container">
@@ -382,7 +360,7 @@
       </div>
       <div class="contacts-grid">
         <div class="reveal">
-          <h2>Заходите <em>на кофе</em></h2>
+          <h2>Заходите на кофе</h2>
           <p class="contacts-lead">Без брони и дресс-кода. Просто приходите — места хватит и за столом, и у окна.</p>
           <div class="contact-list">
             <a class="contact-row" href="https://yandex.ru/maps/?text=Краснодар%2C%20Чапаева%2C%2094" target="_blank" rel="noopener">

@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Терра — кинетический первый экран (демо анимаций)</title>
+<meta name="description" content="Демонстрация анимаций на anime.js 4.5: кинетическая типографика, параллакс, счётчики. Бренд вымышлен.">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' fill='%230d0c0a'/><text y='72' x='50' text-anchor='middle' font-size='64' fill='%23c9a86a' font-family='Georgia'>Т</text></svg>">
+<style>
+  :root{
+    --bg:#0d0c0a; --bg-2:#14120f; --cream:#f3eee5; --muted:rgba(243,238,229,.62);
+    --gold:#c9a86a; --line:rgba(243,238,229,.14);
+    --serif:"Georgia","Times New Roman",serif;
+    --sans:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif;
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{background:var(--bg);color:var(--cream);font-family:var(--sans);
+       -webkit-font-smoothing:antialiased;overflow-x:hidden}
+  img{display:block;max-width:100%}
+  .wrap{width:min(1280px,100% - 48px);margin-inline:auto}
+
+  /* ---------- hero ---------- */
+  .hero{position:relative;min-height:100svh;display:grid;align-items:center;overflow:hidden}
+  .hero-bg{position:absolute;inset:-10% 0;z-index:0;will-change:transform}
+  .hero-bg img{width:100%;height:100%;object-fit:cover;opacity:.62;
+               transform:scale(1.08);will-change:transform}
+  .hero-bg::after{content:"";position:absolute;inset:0;
+    background:radial-gradient(120% 90% at 30% 40%,rgba(13,12,10,.2),rgba(13,12,10,.92) 70%),
+               linear-gradient(180deg,rgba(13,12,10,.85),rgba(13,12,10,.35) 45%,var(--bg))}
+  .hero-in{position:relative;z-index:1;padding:120px 0 90px}
+  .eyebrow{display:flex;align-items:center;gap:14px;
+           font-size:11px;letter-spacing:.28em;text-transform:uppercase;color:var(--gold)}
+  .eyebrow i{display:block;width:56px;height:1px;background:var(--gold);transform-origin:left;
+             transform:scaleX(0)}
+  .title{font-family:var(--serif);font-weight:400;line-height:.86;
+         margin:26px 0 0;letter-spacing:.02em;
+         font-size:clamp(88px,15.5vw,232px);text-transform:uppercase;
+         display:flex;flex-wrap:wrap}
+  .ltr{display:inline-block;will-change:transform,opacity,filter;opacity:0}
+  .ltr-gap{width:.06em}
+  .sub{margin-top:26px;font-size:clamp(15px,1.4vw,19px);color:var(--muted);
+       letter-spacing:.02em;max-width:48ch;line-height:1.5}
+  .rule{height:1px;background:linear-gradient(90deg,var(--gold),rgba(201,168,106,0));
+        margin-top:44px;transform-origin:left;transform:scaleX(0);max-width:520px}
+  .hero-meta{margin-top:34px;display:flex;gap:38px;flex-wrap:wrap;
+             font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:var(--muted)}
+  .hero-meta b{color:var(--cream);font-weight:500}
+  .scroll-hint{position:absolute;left:50%;bottom:26px;transform:translateX(-50%);
+               font-size:10px;letter-spacing:.24em;text-transform:uppercase;
+               color:var(--muted);display:flex;flex-direction:column;align-items:center;gap:10px;z-index:2}
+  .scroll-hint i{width:1px;height:46px;background:linear-gradient(var(--gold),transparent);
+                 animation:drip 2.4s ease-in-out infinite}
+  @keyframes drip{0%,100%{transform:scaleY(.4);opacity:.4}50%{transform:scaleY(1);opacity:1}}
+
+  /* ---------- cards ---------- */
+  .sec{padding:130px 0}
+  .sec-head{display:flex;justify-content:space-between;align-items:flex-end;
+            gap:40px;flex-wrap:wrap;margin-bottom:56px}
+  .sec-kicker{font-size:11px;letter-spacing:.26em;text-transform:uppercase;color:var(--gold)}
+  .sec-title{font-family:var(--serif);font-weight:400;font-size:clamp(34px,4.4vw,62px);
+             line-height:1.02;margin-top:14px}
+  .sec-title em{font-style:italic;color:var(--gold)}
+  .sec-lead{max-width:38ch;color:var(--muted);font-size:15px;line-height:1.6}
+
+  .cards{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;perspective:1200px}
+  .card{position:relative;border-radius:18px;overflow:hidden;background:var(--bg-2);
+        aspect-ratio:3/4;opacity:0;transform:translateY(60px);
+        transition:box-shadow .5s}
+  .card img{width:100%;height:100%;object-fit:cover;transition:transform .9s cubic-bezier(.16,1,.3,1)}
+  .card:hover img{transform:scale(1.06)}
+  .card figcaption{position:absolute;inset:auto 0 0;padding:26px 24px;
+    background:linear-gradient(0deg,rgba(9,8,7,.92),rgba(9,8,7,.35) 60%,transparent)}
+  .card h3{font-family:var(--serif);font-weight:400;font-size:26px;letter-spacing:.01em}
+  .card p{margin-top:6px;font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--muted)}
+  .card::after{content:"";position:absolute;inset:0;border-radius:18px;
+    border:1px solid rgba(243,238,229,.1);pointer-events:none}
+
+  /* ---------- numbers ---------- */
+  .nums{border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+  .nums-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:0}
+  .num{padding:64px 36px;border-left:1px solid var(--line);opacity:0;transform:translateY(30px)}
+  .num:first-child{border-left:0;padding-left:0}
+  .num b{display:block;font-family:var(--serif);font-weight:400;
+         font-size:clamp(44px,5vw,66px);line-height:1;color:var(--gold);
+         font-variant-numeric:tabular-nums;white-space:nowrap}
+  .num span{display:block;margin-top:12px;font-size:11px;letter-spacing:.18em;
+            text-transform:uppercase;color:var(--muted)}
+
+  /* ---------- footer ---------- */
+  .foot{padding:70px 0 90px;color:var(--muted);font-size:12px;line-height:1.8;
+        display:flex;justify-content:space-between;gap:30px;flex-wrap:wrap}
+  .foot b{color:var(--cream);font-weight:500}
+
+  .replay{position:fixed;right:22px;bottom:22px;z-index:20;
+    display:inline-flex;align-items:center;gap:10px;
+    padding:12px 20px;border-radius:999px;cursor:pointer;
+    background:rgba(20,18,15,.86);border:1px solid var(--line);
+    color:var(--cream);font:inherit;font-size:12px;letter-spacing:.14em;text-transform:uppercase;
+    backdrop-filter:blur(10px);transition:border-color .3s,transform .3s}
+  .replay:hover{border-color:rgba(201,168,106,.6);transform:translateY(-2px)}
+  .replay svg{width:14px;height:14px;color:var(--gold)}
+
+  @media (max-width:900px){
+    .cards{grid-template-columns:1fr;gap:14px}
+    .card{aspect-ratio:16/10}
+    .nums-grid{grid-template-columns:repeat(2,1fr)}
+    .num{padding:40px 24px}
+    .num:nth-child(3){border-left:0;padding-left:0}
+    .num:nth-child(-n+2){border-bottom:1px solid var(--line)}
+    .sec{padding:90px 0}
+    .hero-in{padding:96px 0 110px}
+    .scroll-hint{display:none}
+  }
+  @media (max-width:520px){
+    .eyebrow{font-size:10px;letter-spacing:.16em;gap:10px}
+    .eyebrow i{width:30px}
+    .hero-meta{gap:18px 26px;font-size:11px}
+    .nums-grid{grid-template-columns:1fr}
+    .num{border-left:0;padding:28px 0}
+    .num:first-child{padding-top:36px}
+  }
+  @media (prefers-reduced-motion:reduce){
+    .ltr,.card,.num,.rule,.eyebrow i{opacity:1!important;transform:none!important;filter:none!important}
+    .scroll-hint i{animation:none}
+    html{scroll-behavior:auto}
+  }
+</style>
+</head>
+<body>
+
+<section class="hero" id="top">
+  <div class="hero-bg" id="heroBg">
+    <img src="img/hero.jpg" alt="Зал ресторана «Терра»">
+  </div>
+
+  <div class="hero-in wrap">
+    <div class="eyebrow"><i></i>Краснодар · Ставропольская, 128</div>
+
+    <h1 class="title" id="title" aria-label="Терра">
+      <span class="ltr" aria-hidden="true">Т</span><span class="ltr" aria-hidden="true">Е</span><span class="ltr" aria-hidden="true">Р</span><span class="ltr" aria-hidden="true">Р</span><span class="ltr" aria-hidden="true">А</span>
+    </h1>
+
+    <p class="sub">Кухня, веранда и живая музыка. Семь лет на Ставропольской — без пафоса и без спешки.</p>
+    <div class="rule" id="rule"></div>
+
+    <div class="hero-meta">
+      <span><b>12:00–00:00</b> ежедневно</span>
+      <span><b>120</b> мест</span>
+      <span><b>1 700 ₽</b> средний чек</span>
+    </div>
+  </div>
+
+  <div class="scroll-hint">Листайте<i></i></div>
+</section>
+
+<section class="sec" id="menu">
+  <div class="wrap">
+    <div class="sec-head">
+      <div>
+        <div class="sec-kicker">Что внутри</div>
+        <h2 class="sec-title">Три состояния<br><em>одного вечера</em></h2>
+      </div>
+      <p class="sec-lead">Карточки входят лесенкой: задержка растёт с каждой. Наведение добавляет наклон по курсору — без библиотек, чистым CSS.</p>
+    </div>
+
+    <div class="cards">
+      <figure class="card">
+        <img src="img/about-main.jpg" alt="Основной зал ресторана" loading="lazy">
+        <figcaption><h3>Зал</h3><p>120 мест · два уровня</p></figcaption>
+      </figure>
+      <figure class="card">
+        <img src="img/gallery-meat.jpg" alt="Мясное блюдо" loading="lazy">
+        <figcaption><h3>Кухня</h3><p>Открытый гриль</p></figcaption>
+      </figure>
+      <figure class="card">
+        <img src="img/gallery-drinks.jpg" alt="Напитки в баре" loading="lazy">
+        <figcaption><h3>Бар</h3><p>Коктейли и вино</p></figcaption>
+      </figure>
+    </div>
+  </div>
+</section>
+
+<section class="sec nums" style="padding:0">
+  <div class="wrap">
+    <div class="nums-grid">
+      <div class="num"><b data-count="120">0</b><span>мест в зале</span></div>
+      <div class="num"><b data-count="3">0</b><span>зала и веранда</span></div>
+      <div class="num"><b data-count="7">0</b><span>лет в Краснодаре</span></div>
+      <div class="num"><b data-count="1700" data-suffix=" ₽">0</b><span>средний чек</span></div>
+    </div>
+  </div>
+</section>
+
+<div class="wrap">
+  <footer class="foot">
+    <div><b>Демонстрация анимаций.</b><br>anime.js 4.5.0 · локально, без CDN · бренд «Терра» вымышлен.</div>
+    <div>Кинетическая типографика · параллакс · счётчики · stagger</div>
+  </footer>
+</div>
+
+<button class="replay" id="replay" type="button">
+  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 12a9 9 0 1 0 3-6.7"/><path d="M3 4v5h5"/></svg>
+  Повторить
+</button>
+
+<script src="vendor/anime.umd.min.js"></script>
+<script>
+(function () {
+  'use strict';
+
+  var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  if (!window.anime) {                       /* библиотека не загрузилась — сайт живёт */
+    document.querySelectorAll('.ltr,.card,.num').forEach(function (el) {
+      el.style.opacity = 1; el.style.transform = 'none';
+    });
+    return;
+  }
+
+  var animate = anime.animate;
+  var stagger = anime.stagger;
+  var createTimeline = anime.createTimeline;
+
+  var letters = document.querySelectorAll('.ltr');
+  var rule = document.getElementById('rule');
+  var bar = document.querySelector('.eyebrow i');
+
+  /* ---------------- первый экран ---------------- */
+  function hero() {
+    if (reduce) {
+      letters.forEach(function (l) { l.style.opacity = 1; });
+      return;
+    }
+    createTimeline({ defaults: { ease: 'outExpo', duration: 1100 } })
+      .add('.eyebrow', { opacity: [0, 1], translateY: [14, 0], duration: 700 }, 0)
+      .add(bar, { scaleX: [0, 1], duration: 900, ease: 'inOutQuad' }, 120)
+      .add(letters, {
+        opacity: [0, 1],
+        translateY: [110, 0],
+        rotateX: [-70, 0],
+        filter: ['blur(14px)', 'blur(0px)'],
+        delay: stagger(90),
+        duration: 1250
+      }, 160)
+      .add('.sub', { opacity: [0, 1], translateY: [24, 0], duration: 800 }, 780)
+      .add(rule, { scaleX: [0, 1], duration: 1200, ease: 'inOutQuad' }, 900)
+      .add('.hero-meta span', {
+        opacity: [0, 1], translateY: [16, 0],
+        delay: stagger(110), duration: 700
+      }, 1000)
+      .add('.scroll-hint', { opacity: [0, 1], duration: 600 }, 1400);
+  }
+
+  /* ---------------- появление секций ---------------- */
+  function reveal(el, params) {
+    animate(el, Object.assign({
+      opacity: [0, 1],
+      translateY: [50, 0],
+      duration: 1000,
+      ease: 'outExpo'
+    }, params || {}));
+  }
+
+  var cards = document.querySelectorAll('.card');
+  var nums = document.querySelectorAll('.num');
+
+  var io = new IntersectionObserver(function (entries) {
+    entries.forEach(function (e) {
+      if (!e.isIntersecting) return;
+      var t = e.target;
+      io.unobserve(t);
+
+      if (t.classList.contains('card')) {
+        var i = Array.prototype.indexOf.call(cards, t);
+        reveal(t, { delay: i * 140, rotateX: [8, 0] });
+      } else if (t.classList.contains('num')) {
+        var j = Array.prototype.indexOf.call(nums, t);
+        reveal(t, { delay: j * 90, translateY: [24, 0] });
+        var b = t.querySelector('b');
+        var to = Number(b.getAttribute('data-count'));
+        var suffix = b.getAttribute('data-suffix') || '';
+        if (reduce) {                       /* без анимации — сразу конечное число */
+          b.textContent = to.toLocaleString('ru-RU') + suffix;
+          return;
+        }
+        var obj = { v: 0 };
+        animate(obj, {
+          v: to,
+          duration: 1500 + j * 120,
+          ease: 'outExpo',
+          onUpdate: function () {
+            b.textContent = Math.round(obj.v).toLocaleString('ru-RU') + suffix;
+          }
+        });
+      }
+    });
+  }, { threshold: 0.25, rootMargin: '0px 0px -60px 0px' });
+
+  cards.forEach(function (c) { io.observe(c); });
+  nums.forEach(function (n) { io.observe(n); });
+
+  /* ---------------- параллакс первого экрана ---------------- */
+  var bg = document.getElementById('heroBg');
+  if (!reduce) {
+    var ticking = false;
+    window.addEventListener('scroll', function () {
+      if (ticking) return;
+      ticking = true;
+      requestAnimationFrame(function () {
+        var y = window.scrollY;
+        if (y < window.innerHeight * 1.2) {
+          bg.style.transform = 'translate3d(0,' + (y * 0.24) + 'px,0)';
+          bg.style.opacity = String(Math.max(0, 1 - y / (window.innerHeight * 0.9)));
+        }
+        ticking = false;
+      });
+    }, { passive: true });
+  }
+
+  /* ---------------- сброс счётчиков при повторе ---------------- */
+  document.getElementById('replay').addEventListener('click', function () {
+    letters.forEach(function (l) {
+      l.style.opacity = 0;
+      l.style.transform = '';
+      l.style.filter = '';
+    });
+    document.querySelectorAll('.hero-meta span,.scroll-hint,.eyebrow').forEach(function (el) {
+      el.style.opacity = 0; el.style.transform = '';
+    });
+    rule.style.transform = 'scaleX(0)';
+    bar.style.transform = 'scaleX(0)';
+    nums.forEach(function (n) { n.querySelector('b').textContent = '0'; });
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+    setTimeout(hero, 420);
+  });
+
+  hero();
+})();
+</script>
+</body>
+</html>

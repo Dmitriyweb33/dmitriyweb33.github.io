@@ -3,18 +3,17 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>УГОЛЬ — стейк-хаус на углях в Краснодаре | Мясо, огонь и выдержка</title>
+<title>УГОЛЬ — стейк-хаус на углях в Краснодаре (концепт)</title>
 <meta name="description" content="Стейк-хаус «УГОЛЬ» в Краснодаре: сухое вызревание 28 дней, дровяная печь и стейки на углях. Красноармейская, 55. Ежедневно с 12:00 до 00:00.">
 <meta name="theme-color" content="#0b0907">
+<meta name="robots" content="noindex, nofollow">
 <meta property="og:title" content="УГОЛЬ — стейк-хаус на углях">
 <meta property="og:description" content="Сухое вызревание, дровяная печь и стейки, которые не нужно спасать соусом.">
 <meta property="og:type" content="website">
 <meta property="og:image" content="img/hero.jpg">
 <meta property="og:locale" content="ru_RU">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%230b0907'/%3E%3Cpath d='M32 12c2 8-4 11-4 17 0 3 2 5 4 5s4-2 4-5c0-2-1-4-1-7 5 4 9 10 9 16 0 8-6 14-14 14s-14-6-14-14c0-9 7-16 16-26z' fill='%23d2602f'/%3E%3C/svg%3E">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Golos+Text:wght@400;500;600&family=Oswald:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="fonts/fonts.css">
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -106,8 +105,7 @@
   .hero-copy-inner{width:100%;max-width:660px;margin-left:0}
   .eyebrow{display:flex;align-items:center;gap:12px;font-size:10px;letter-spacing:.26em;text-transform:uppercase;color:var(--muted)}
   .eyebrow i{display:block;width:7px;height:7px;background:var(--ember);transform:rotate(45deg);flex:none}
-  .hero h1{font-family:var(--display);font-weight:600;font-size:clamp(62px,8.4vw,124px);line-height:.88;letter-spacing:-.015em;text-transform:uppercase;margin-top:26px}
-  .hero h1 em{display:block;font-style:normal;color:var(--ember)}
+  .hero h1{font-family:var(--display);font-weight:600;font-size:clamp(58px,7vw,100px);line-height:.92;letter-spacing:-.015em;text-transform:uppercase;margin-top:48px}
   .lead{font-size:clamp(15px,1.3vw,17.5px);line-height:1.7;color:var(--cream-2);max-width:46ch;margin-top:26px}
   .hero-actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:34px}
   .hero-facts{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;margin-top:clamp(36px,5vw,58px);padding-top:24px;border-top:1px solid var(--line)}
@@ -118,14 +116,6 @@
   .hero-media::after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(11,9,7,.55) 0%,rgba(11,9,7,0) 35%),linear-gradient(0deg,rgba(11,9,7,.5) 0%,rgba(11,9,7,0) 35%)}
   .hero-media-note{position:absolute;left:18px;bottom:24px;z-index:2;display:flex;align-items:center;gap:12px;font-size:9px;letter-spacing:.28em;text-transform:uppercase;color:var(--cream-2);writing-mode:vertical-rl;transform:rotate(180deg)}
   .hero-media-note::before{content:"";width:1px;height:54px;background:var(--ember)}
-
-  /* ticker */
-  .ticker{background:var(--cream);color:var(--bg);overflow:hidden;padding:16px 0}
-  .ticker-track{display:flex;width:max-content;animation:ticker 38s linear infinite}
-  .ticker-group{display:flex;flex:none}
-  .ticker span{display:inline-flex;align-items:center;gap:26px;padding-right:26px;font-family:var(--display);font-size:13px;font-weight:500;letter-spacing:.22em;text-transform:uppercase;white-space:nowrap}
-  .ticker span::after{content:"◆";font-size:7px;color:var(--ember)}
-  @keyframes ticker{to{transform:translateX(-50%)}}
 
   /* sections */
   .section{padding:clamp(76px,9vw,126px) 0;scroll-margin-top:88px}
@@ -140,7 +130,6 @@
   .about-media img{width:100%;height:clamp(430px,52vw,640px);object-fit:cover;object-position:center}
   .about-media figcaption{display:flex;justify-content:space-between;gap:16px;margin-top:12px;font-size:10px;letter-spacing:.14em;text-transform:uppercase;color:var(--muted)}
   .about-copy h3{font-family:var(--display);font-weight:500;font-size:clamp(32px,4vw,52px);line-height:1.02;text-transform:uppercase;letter-spacing:-.01em}
-  .about-copy h3 em{font-style:normal;color:var(--ember)}
   .about-copy p{font-size:clamp(15px,1.3vw,17px);line-height:1.75;color:var(--cream-2);margin-top:20px}
   .about-copy p strong{font-weight:500;color:var(--cream)}
   .about-stats{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:34px;padding-top:26px;border-top:1px solid var(--line)}
@@ -189,7 +178,6 @@
   .booking{background:var(--bg-2);border-top:1px solid var(--line);border-bottom:1px solid var(--line);background-image:radial-gradient(700px 400px at 0% 100%,rgba(210,96,47,.08),transparent 65%)}
   .booking-grid{display:grid;grid-template-columns:.9fr 1.1fr;gap:clamp(36px,6vw,90px);align-items:start}
   .booking-copy h3{font-family:var(--display);font-weight:500;font-size:clamp(38px,5.2vw,68px);line-height:.98;text-transform:uppercase;letter-spacing:-.01em}
-  .booking-copy h3 em{font-style:normal;color:var(--ember)}
   .booking-copy p{font-size:15px;line-height:1.7;color:var(--cream-2);margin-top:20px;max-width:36ch}
   .booking-note{margin-top:28px;padding-top:22px;border-top:1px solid var(--line);font-size:12px;line-height:1.7;color:var(--muted)}
   .booking-note a{color:var(--cream)}
@@ -230,7 +218,6 @@
   /* contacts */
   .contacts-grid{display:grid;grid-template-columns:1.02fr .98fr;gap:clamp(36px,5vw,78px);align-items:start}
   .contacts h3{font-family:var(--display);font-weight:500;font-size:clamp(42px,6vw,78px);line-height:.96;text-transform:uppercase;letter-spacing:-.01em}
-  .contacts h3 em{font-style:normal;color:var(--ember)}
   .contacts-lead{font-size:15px;line-height:1.7;color:var(--cream-2);max-width:38ch;margin-top:20px}
   .contact-list{margin-top:32px;border-top:1px solid var(--line)}
   .contact-row{display:flex;align-items:center;gap:18px;padding:17px 0;border-bottom:1px solid var(--line);transition:padding .3s var(--ease),color .3s var(--ease)}
@@ -259,7 +246,7 @@
 
   @media (max-width:1080px){
     .header-phone{display:none}
-    .hero h1{font-size:clamp(56px,9vw,100px)}
+    .hero h1{font-size:clamp(56px,8.4vw,90px);margin-top:42px}
   }
   @media (max-width:960px){
     .nav{display:none}
@@ -316,7 +303,6 @@
     html{scroll-behavior:auto}
     *,*::before,*::after{animation-duration:.001ms !important;transition-duration:.001ms !important}
     .reveal{opacity:1;transform:none}
-    .ticker-track{animation:none}
   }
 </style>
 <noscript><style>.reveal{opacity:1;transform:none}</style></noscript>
@@ -354,8 +340,8 @@
     <div class="hero-copy">
       <div class="hero-copy-inner">
         <p class="eyebrow"><i aria-hidden="true"></i> Стейк-хаус · Краснодар · с 2014</p>
-        <h1>Мясо<em>на углях</em></h1>
-        <p class="lead">Сухое вызревание, дровяная печь и стейки, которые не нужно спасать соусом. Приходите голодными — уходите медленно.</p>
+        <h1>Стейки<br>на дровах<br>и угле</h1>
+        <p class="lead">Сухое вызревание 28 дней и мясо, которое не нужно спасать соусом. Приходите голодными.</p>
         <div class="hero-actions">
           <a class="btn btn-ember" href="#booking">
             Забронировать стол
@@ -376,17 +362,6 @@
     </div>
   </section>
 
-  <div class="ticker" aria-hidden="true">
-    <div class="ticker-track">
-      <div class="ticker-group">
-        <span>Рибай</span><span>Стриплойн</span><span>Филе-миньон</span><span>Тибоун</span><span>Пиканья</span><span>Томагавк</span><span>Ребра BBQ</span><span>Выдержка 28 дней</span>
-      </div>
-      <div class="ticker-group">
-        <span>Рибай</span><span>Стриплойн</span><span>Филе-миньон</span><span>Тибоун</span><span>Пиканья</span><span>Томагавк</span><span>Ребра BBQ</span><span>Выдержка 28 дней</span>
-      </div>
-    </div>
-  </div>
-
   <section class="section" id="about">
     <div class="container">
       <div class="sec-head reveal">
@@ -400,7 +375,7 @@
           <figcaption><b>Зал «Угля»</b><span>вечер, будний день</span></figcaption>
         </figure>
         <div class="about-copy reveal">
-          <h3>Мясо, огонь<br>и <em>время</em></h3>
+          <h3>Мясо, огонь<br>и время</h3>
           <p>Мы открылись в 2014 году с одной печи и простой идеей: <strong>хорошее мясо не нужно маскировать</strong>. Только соль, перец, угли и время — столько, сколько требует отруб.</p>
           <p>Говядину привозим с ферм Краснодарского края и выдерживаем в собственной камере. Стейки режем перед подачей, гарниры готовим на том же огне. Никаких полуфабрикатов и соусов «на всякий случай».</p>
           <div class="about-stats">
@@ -520,7 +495,7 @@
       </div>
       <div class="booking-grid">
         <div class="booking-copy reveal">
-          <h3>Стол<br>на <em>вечер</em></h3>
+          <h3>Стол<br>на вечер</h3>
           <p>Оставьте заявку — мы перезвоним, подтвердим время и подскажем, какой отруб сегодня лучше.</p>
           <div class="booking-note">
             Для компаний от 8 человек и закрытых ужинов — по телефону.
@@ -626,7 +601,7 @@
       </div>
       <div class="contacts-grid">
         <div class="reveal">
-          <h3>Ждём <em>вас</em></h3>
+          <h3>Ждём вас</h3>
           <p class="contacts-lead">Вход с улицы, парковка во дворе. Если едете компанией — позвоните, встретим.</p>
           <div class="contact-list">
             <a class="contact-row" href="https://yandex.ru/maps/?text=Краснодар%2C%20Красноармейская%2C%2055" target="_blank" rel="noopener">
