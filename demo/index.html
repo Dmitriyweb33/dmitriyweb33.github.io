@@ -94,7 +94,7 @@
     line-height:1.02;
     margin:22px 0 0;
   }
-  .section-title em{font-style:italic;color:var(--gold-light)}
+  .section-title em{font-style:italic}
   .section-head{display:flex;justify-content:space-between;align-items:flex-end;gap:40px;flex-wrap:wrap}
   .lead{color:var(--cream-dim);font-size:clamp(15px,1.2vw,17px);max-width:52ch}
 
@@ -184,7 +184,7 @@
     font-size:clamp(46px,8.2vw,112px);
     line-height:.96;letter-spacing:-.025em;max-width:13ch;
   }
-  .hero h1 em{font-style:italic;color:var(--gold-light)}
+  .hero h1 em{font-style:italic}
   .hero-sub{
     margin:30px 0 38px;max-width:44ch;
     color:var(--cream-dim);font-size:clamp(15px,1.25vw,17px);line-height:1.65;
@@ -219,21 +219,20 @@
   .fact strong{font-family:var(--serif);font-size:17px;font-weight:400;color:var(--cream);letter-spacing:.02em}
   .fact strong em{color:var(--gold-light);font-style:normal}
 
-  /* ---------- marquee ---------- */
+  /* ---------- features strip ---------- */
   .marquee{
     border-top:1px solid var(--line);border-bottom:1px solid var(--line);
-    overflow:hidden;padding:22px 0;background:var(--bg-2);
+    padding:18px 0;background:var(--bg-2);
   }
-  .marquee-track{display:flex;width:max-content;animation:marquee 38s linear infinite}
-  .marquee:hover .marquee-track{animation-play-state:paused}
-  @keyframes marquee{to{transform:translateX(-50%)}}
-  .marquee-group{display:flex;align-items:center;flex:none}
+  .marquee-track{display:flex;justify-content:center;padding:0 24px}
+  .marquee-group{display:flex;align-items:center;justify-content:center;flex-wrap:wrap;row-gap:10px}
   .marquee-item{
-    display:flex;align-items:center;gap:38px;padding-right:38px;
+    display:flex;align-items:center;gap:22px;padding-right:22px;
     font-size:12px;letter-spacing:.28em;text-transform:uppercase;color:var(--cream-dim);
     white-space:nowrap;
   }
   .marquee-item::after{content:"";width:5px;height:5px;border-radius:50%;background:var(--gold);opacity:.85}
+  .marquee-item:last-child::after{display:none}
 
   /* ---------- about ---------- */
   .about-grid{
@@ -549,6 +548,10 @@
     .hero-cta{gap:10px}
     .hero-cta .btn{padding:14px 22px;font-size:11.5px}
     .hero-facts-inner{grid-template-columns:1fr 1fr;padding-top:20px;padding-bottom:20px}
+    .marquee{padding:14px 0}
+    .marquee-item{font-size:10px;letter-spacing:.2em;gap:16px;padding-right:16px}
+    .marquee-item:nth-child(n+5){display:none}
+    .marquee-item:nth-child(4)::after{display:none}
     .fact{padding:0 14px}
     .fact strong{font-size:14.5px}
     .stats{margin-top:48px}
@@ -646,19 +649,9 @@
   </div>
 </section>
 
-<!-- ================= MARQUEE ================= -->
+<!-- ================= FEATURES STRIP ================= -->
 <div class="marquee" aria-hidden="true">
   <div class="marquee-track">
-    <div class="marquee-group">
-      <span class="marquee-item">Летняя веранда</span>
-      <span class="marquee-item">Живая музыка</span>
-      <span class="marquee-item">Кальян</span>
-      <span class="marquee-item">Завтраки</span>
-      <span class="marquee-item">Доставка</span>
-      <span class="marquee-item">Парковка</span>
-      <span class="marquee-item">Wi-Fi</span>
-      <span class="marquee-item">Можно с собакой</span>
-    </div>
     <div class="marquee-group">
       <span class="marquee-item">Летняя веранда</span>
       <span class="marquee-item">Живая музыка</span>
