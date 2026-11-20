@@ -107,6 +107,10 @@
   .hero-facts dd{font-size:14px;font-weight:500}
   .hero-media{margin:0;position:relative}
   .hero-media img{width:100%;height:clamp(420px,56vw,610px);object-fit:cover;border-radius:220px 220px 14px 14px}
+  .hero-media-frame{position:relative}
+  .hero-media .hero-badge{position:absolute;left:18px;bottom:18px;padding:7px 13px;border-radius:999px;
+        background:rgba(28,24,20,.74);color:#f8f5f0;font-size:9px;letter-spacing:.22em;
+        text-transform:uppercase;backdrop-filter:blur(6px);-webkit-backdrop-filter:blur(6px)}
   .hero-media figcaption{display:flex;justify-content:space-between;gap:16px;margin-top:14px;font-size:10px;letter-spacing:.12em;text-transform:uppercase;color:var(--muted)}
   .hero-media figcaption b{font-weight:500;color:var(--ink-2)}
 
@@ -258,7 +262,10 @@
         </dl>
       </div>
       <figure class="hero-media">
-        <img src="img/hero.jpg" width="1200" height="1500" alt="Барная стойка кофейни «ПЕНА»: белый кирпич, лампы и кофемашина" fetchpriority="high">
+        <div class="hero-media-frame">
+          <img src="img/hero.jpg" width="1000" height="1219" alt="Барная стойка кофейни «ПЕНА»: белый кирпич, лампы и кофемашина" fetchpriority="high">
+          <span class="hero-badge">концепт</span>
+        </div>
         <figcaption><b>Чапаева, 94</b><span>ежедневно 8:00–21:00</span></figcaption>
       </figure>
     </div>
