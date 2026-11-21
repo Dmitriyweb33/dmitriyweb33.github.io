@@ -1,0 +1,7 @@
+User-agent: *
+Allow: /
+
+Disallow: /concepts/
+Disallow: /demo/
+
+Sitemap: https://dmitriyweb33.github.io/sitemap.xml
